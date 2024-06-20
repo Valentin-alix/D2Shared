@@ -1,6 +1,6 @@
-from shared.enums import BreedEnum, ElemEnum
-from shared.schemas.base import BaseSchemaOrm
-from shared.schemas.job import JobSchema
+from EzreD2Shared.shared.enums import BreedEnum, ElemEnum
+from EzreD2Shared.shared.schemas.base import BaseSchemaOrm
+from EzreD2Shared.shared.schemas.job import JobSchema
 
 
 class CharacterJobInfoSchema(BaseSchemaOrm):

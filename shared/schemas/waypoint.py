@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from shared.schemas.base import BaseSchemaOrm
+from EzreD2Shared.shared.schemas.base import BaseSchemaOrm
 
 
 class WaypointSchema(BaseSchemaOrm):
@@ -12,6 +12,6 @@ class WaypointSchema(BaseSchemaOrm):
         return self.id.__hash__()
 
 
-from shared.schemas.map import BaseMapSchema
+from EzreD2Shared.shared.schemas.map import BaseMapSchema
 
 WaypointSchema.model_rebuild()

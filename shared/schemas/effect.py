@@ -1,6 +1,6 @@
-from shared.enums import ElemEnum
-from shared.schemas.base import BaseSchemaOrm
-from shared.schemas.characteristic import CharacteristicSchema
+from EzreD2Shared.shared.enums import ElemEnum
+from EzreD2Shared.shared.schemas.base import BaseSchemaOrm
+from EzreD2Shared.shared.schemas.characteristic import CharacteristicSchema
 
 
 class EffectSchema(BaseSchemaOrm):

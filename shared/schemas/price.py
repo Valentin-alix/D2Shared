@@ -1,6 +1,6 @@
-from shared.schemas.base import BaseSchemaOrm
-from shared.schemas.item import ItemSchema
-from shared.schemas.server import ServerSchema
+from EzreD2Shared.shared.schemas.base import BaseSchemaOrm
+from EzreD2Shared.shared.schemas.item import ItemSchema
+from EzreD2Shared.shared.schemas.server import ServerSchema
 
 
 class PriceSchema(BaseSchemaOrm):

@@ -1,6 +1,6 @@
 from enum import Enum, IntEnum, StrEnum, auto
 
-from shared.consts.adaptative.positions import (
+from EzreD2Shared.shared.consts.adaptative.positions import (
     ZAAPI_SALE_HOTEL_CATEGORY_POSITION,
     ZAAPI_VARIOUS_CATEGORY_POSITION,
     ZAAPI_WORKSHOP_CATEGORY_POSITION,

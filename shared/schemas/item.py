@@ -1,5 +1,5 @@
-from shared.schemas.base import BaseSchemaOrm
-from shared.schemas.type_item import TypeItemSchema
+from EzreD2Shared.shared.schemas.base import BaseSchemaOrm
+from EzreD2Shared.shared.schemas.type_item import TypeItemSchema
 
 
 class ItemSchema(BaseSchemaOrm):

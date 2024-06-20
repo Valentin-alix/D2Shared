@@ -1,5 +1,5 @@
-from shared.schemas.area import AreaSchema
-from shared.schemas.base import BaseSchemaOrm
+from EzreD2Shared.shared.schemas.area import AreaSchema
+from EzreD2Shared.shared.schemas.base import BaseSchemaOrm
 
 
 class SubAreaSchema(BaseSchemaOrm):

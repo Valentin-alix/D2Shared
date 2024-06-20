@@ -1,6 +1,6 @@
-from shared.enums import FromDirection, ToDirection
-from shared.schemas.base import BaseSchemaOrm
-from shared.schemas.map import MapSchema
+from EzreD2Shared.shared.enums import FromDirection, ToDirection
+from EzreD2Shared.shared.schemas.base import BaseSchemaOrm
+from EzreD2Shared.shared.schemas.map import MapSchema
 
 
 class MapDirectionSchema(BaseSchemaOrm):

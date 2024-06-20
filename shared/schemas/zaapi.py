@@ -1,6 +1,6 @@
 from pydantic import BaseModel, ConfigDict
 
-from shared.enums import CategoryZaapiPosition
+from EzreD2Shared.shared.enums import CategoryZaapiPosition
 
 from .map import MapSchema
 

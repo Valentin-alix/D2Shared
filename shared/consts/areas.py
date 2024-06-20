@@ -1,5 +1,4 @@
-from shared.enums import AreaEnum
-
+from EzreD2Shared.shared.enums import AreaEnum
 
 UNSUB_REGIONS: list[int] = [AreaEnum.INCARNAM, AreaEnum.ASTRUB]
 FARMABLE_SUB_AREAS: list[int] = [

@@ -1,5 +1,5 @@
-from shared.enums import CategoryEnum
-from shared.schemas.base import BaseSchemaOrm
+from EzreD2Shared.shared.enums import CategoryEnum
+from EzreD2Shared.shared.schemas.base import BaseSchemaOrm
 
 
 class TypeItemSchema(BaseSchemaOrm):
