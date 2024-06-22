@@ -1,9 +1,10 @@
 from datetime import datetime
 from EzreD2Shared.shared.schemas.base import BaseSchemaOrm
+from pydantic import EmailStr
 
 
 class BaseUserSchema(BaseSchemaOrm):
-    email: str
+    email: EmailStr
 
 
 class ReadUserSchema(BaseUserSchema):
