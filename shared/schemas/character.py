@@ -10,7 +10,7 @@ class CharacterJobInfoSchema(BaseSchemaOrm):
     lvl: int
 
     def __hash__(self) -> int:
-        return (self.character.id, self.job_id).__hash__()
+        return (self.character_id, self.job_id).__hash__()
 
 
 class CharacterSchema(BaseSchemaOrm):
