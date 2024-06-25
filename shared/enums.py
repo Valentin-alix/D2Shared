@@ -1,11 +1,5 @@
 from enum import Enum, IntEnum, StrEnum, auto
 
-from EzreD2Shared.shared.consts.adaptative.positions import (
-    ZAAPI_SALE_HOTEL_CATEGORY_POSITION,
-    ZAAPI_VARIOUS_CATEGORY_POSITION,
-    ZAAPI_WORKSHOP_CATEGORY_POSITION,
-)
-
 
 class ServerNameEnum(StrEnum):
     IMAGIRO = "Imagiro"
@@ -113,7 +107,7 @@ class CategoryEnum(IntEnum):
     ECAFLIP_CARD = 238
 
 
-class CategoryZaapiPosition(Enum):
-    WORKSHOP = ZAAPI_WORKSHOP_CATEGORY_POSITION
-    SALE_HOTEL = ZAAPI_SALE_HOTEL_CATEGORY_POSITION
-    VARIOUS = ZAAPI_VARIOUS_CATEGORY_POSITION
+class CategoryZaapiEnum(int, Enum):
+    WORKSHOP = auto()
+    SALE_HOTEL = auto()
+    VARIOUS = auto()

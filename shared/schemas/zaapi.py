@@ -1,6 +1,6 @@
 from pydantic import BaseModel, ConfigDict
 
-from EzreD2Shared.shared.enums import CategoryZaapiPosition
+from EzreD2Shared.shared.enums import CategoryZaapiEnum
 
 from .map import MapSchema
 
@@ -8,7 +8,7 @@ from .map import MapSchema
 class ZaapiSchema(BaseModel):
     model_config = ConfigDict(frozen=True)
 
-    category: CategoryZaapiPosition
+    category: CategoryZaapiEnum
     text: str
     map: MapSchema
 

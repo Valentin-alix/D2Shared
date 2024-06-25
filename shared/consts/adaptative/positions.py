@@ -79,9 +79,9 @@ ZAAP_HAVRE_SAC_POSITION = Position(x_pos=566, y_pos=400)
 SEARCH_ZAAP_POSITION = Position(x_pos=1105, y_pos=210)
 
 # walker
-LEFT_TOP_MAP_CHANGE_POSITION = Position(x_pos=345, y_pos=200)
-LEFT_MAP_CHANGE_POSITION = Position(x_pos=345, y_pos=475)
-LEFT_BOT_MAP_CHANGE_POSITION = Position(x_pos=345, y_pos=725)
+LEFT_TOP_MAP_CHANGE_POSITION = Position(x_pos=342, y_pos=200)
+LEFT_MAP_CHANGE_POSITION = Position(x_pos=342, y_pos=475)
+LEFT_BOT_MAP_CHANGE_POSITION = Position(x_pos=342, y_pos=725)
 
 RIGHT_TOP_MAP_CHANGE_POSITION = Position(x_pos=1575, y_pos=200)
 RIGHT_MAP_CHANGE_POSITION = Position(x_pos=1575, y_pos=475)

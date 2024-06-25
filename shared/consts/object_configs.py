@@ -1,4 +1,5 @@
-from functools import cache
+from cachetools import cached
+from cachetools.keys import hashkey
 
 from ..consts.adaptative.regions import (
     CENTER_LARGE_V_REGION,
@@ -526,7 +527,7 @@ class ObjectConfigs:
         )
 
 
-@cache
+@cached(cache={}, key=lambda _object: hashkey(_object))
 def get_all_template_config_by_ref(
     _object: object = ObjectConfigs,
 ) -> dict[str, ObjectSearchConfig]:
