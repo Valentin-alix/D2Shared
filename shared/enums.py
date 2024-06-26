@@ -57,7 +57,7 @@ class JobEnum(StrEnum):
     SHAPER_MAGE = "Façomage"
 
 
-class ToDirection(int, Enum):
+class ToDirection(IntEnum):
     TOP_LEFT = auto()
     TOP = auto()
     TOP_RIGHT = auto()
@@ -72,7 +72,7 @@ class ToDirection(int, Enum):
     LEFT_BOT = auto()
 
 
-class FromDirection(int, Enum):
+class FromDirection(IntEnum):
     TOP_LEFT = auto()
     TOP = auto()
     TOP_RIGHT = auto()
@@ -107,7 +107,7 @@ class CategoryEnum(IntEnum):
     ECAFLIP_CARD = 238
 
 
-class CategoryZaapiEnum(int, Enum):
+class CategoryZaapiEnum(IntEnum):
     WORKSHOP = auto()
     SALE_HOTEL = auto()
     VARIOUS = auto()
