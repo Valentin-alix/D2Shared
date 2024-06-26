@@ -76,17 +76,19 @@ class Astar(ABC, Generic[T]):
     @abstractmethod
     def get_dist(self, current: T, ends: "set[T]") -> float: ...
 
-    def reconstruct_path(self, node: Node[T], do_reverse: bool) -> Iterator[T]:
+    def reconstruct_path(self, node: Node[T], do_reverse: bool) -> list[T]:
         def iter_path():
             current = node
+            path: list[T] = []
             while current:
-                yield current.data
+                path.append(current.data)
                 current = current.parent
+            return path
 
         if do_reverse:
             return iter_path()
         else:
-            return reversed(list(iter_path()))
+            return iter_path()[::-1]
 
     def is_goal_reached(self, current: T, ends: set[T]) -> bool:
         return current in ends
@@ -97,7 +99,7 @@ class Astar(ABC, Generic[T]):
         ends: set[T],
         do_reverse: bool = False,
         random_coeff: tuple[float, float] = (0.95, 1),
-    ) -> Iterator[T] | None:
+    ) -> list[T] | None:
         open_set: OpenSet[Node[T]] = OpenSet()
 
         start_node: Node[T] = Node(
@@ -151,7 +153,7 @@ def find_path(
     distance_between_func: Callable[[U, set[U]], float],
     is_goal_reached_func: Callable[[U, set[U]], bool] = lambda curr, ends: curr in ends,
     do_reverse: bool = False,
-) -> Iterator[U] | None:
+) -> list[U] | None:
     """A non-class version of the path finding algorithm"""
 
     class FindPath(Astar):
