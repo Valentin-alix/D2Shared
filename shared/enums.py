@@ -111,3 +111,11 @@ class CategoryZaapiEnum(int, Enum):
     WORKSHOP = auto()
     SALE_HOTEL = auto()
     VARIOUS = auto()
+
+
+class TypeCellEnum(Enum):
+    UNKNOWN = 1
+    NORMAL = 2
+    VOID = 3
+    OPAQUE = 4
+    OCCUPED = 5
