@@ -1,7 +1,7 @@
 # general
 from ...schemas.region import RegionSchema
 
-INVENTORY_RIGHT_CROSS_REGION = RegionSchema(left=1530, top=69, right=1588, bot=112)
+INVENTORY_RIGHT_CROSS_REGION = RegionSchema(left=1530, top=25, right=1588, bot=112)
 ICON_CHARACTERISTIC_REGION = RegionSchema(left=1315, top=880, right=1600, bot=940)
 EMPTY_REGION = RegionSchema(left=1, top=1, right=295, bot=1000)
 CONTENT_REGION = RegionSchema(left=328, top=0, right=1591, bot=892)
