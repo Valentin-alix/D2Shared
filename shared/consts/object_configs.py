@@ -82,6 +82,7 @@ class ObjectConfigs:
             grey_scale=False,
             threshold=0.95,
             ref="check.small",
+            cache_info=CacheInfo(max_placement=2)
         )
         medium_inventory = ObjectSearchConfig(
             name="check.medium_inventory",
