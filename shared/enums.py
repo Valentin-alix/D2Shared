@@ -1,4 +1,4 @@
-from enum import Enum, IntEnum, StrEnum, auto
+from enum import IntEnum, StrEnum, auto
 
 
 class ServerNameEnum(StrEnum):
@@ -113,9 +113,9 @@ class CategoryZaapiEnum(IntEnum):
     VARIOUS = auto()
 
 
-class TypeCellEnum(Enum):
-    UNKNOWN = 1
-    NORMAL = 2
-    VOID = 3
-    OPAQUE = 4
-    OCCUPED = 5
+class TypeCellEnum(IntEnum):
+    UNKNOWN = auto()
+    NORMAL = auto()
+    VOID = auto()
+    OPAQUE = auto()
+    OCCUPED = auto()

@@ -2,15 +2,13 @@ from pydantic import BaseModel, ConfigDict
 
 from EzreD2Shared.shared.enums import CategoryZaapiEnum
 
-from .map import MapSchema
-
 
 class ZaapiSchema(BaseModel):
     model_config = ConfigDict(frozen=True)
 
     category: CategoryZaapiEnum
     text: str
-    map: MapSchema
+    map_id: int
 
     def __hash__(self) -> int:
         return self.text.__hash__()
