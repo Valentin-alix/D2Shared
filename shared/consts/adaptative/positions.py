@@ -31,7 +31,7 @@ WORKSHOP_WOODCUTTER_OUT = Position(x_pos=1390, y_pos=780)
 
 WORKSHOP_PEASANT_IN = Position(x_pos=855, y_pos=560)
 WORKSHOP_PEASANT_MATERIAL = Position(x_pos=775, y_pos=200)
-WORKSHOP_PEASANT_OUT = Position(x_pos=1315, y_pos=710)
+WORKSHOP_PEASANT_OUT = Position(x_pos=1300, y_pos=515)
 
 WORKSHOP_ALCHEMIST_IN = Position(x_pos=1220, y_pos=405)
 WORKSHOP_ALCHEMIST_MATERIAL = Position(x_pos=940, y_pos=610)
@@ -47,7 +47,7 @@ MERGE_CRAFT_POSITION = Position(x_pos=1000, y_pos=475)
 # sale hotel
 BONTA_SALE_HOTEL_RESOURCE_POSITION = Position(x_pos=1485, y_pos=450)
 ASTRUB_SALE_HOTEL_RESOURCE_POSITION = Position(x_pos=807, y_pos=480)
-BONTA_SALE_HOTEL_CONSUMABLE_POSITION = Position(x_pos=1140, y_pos=715)
+BONTA_SALE_HOTEL_CONSUMABLE_POSITION = Position(x_pos=1140, y_pos=511)
 ASTRUB_SALE_HOTEL_CONSUMABLE_POSITION = Position(x_pos=1350, y_pos=435)
 
 SALE_HOTEL_ALL_CATEGORY_POSITION = Position(x_pos=1307, y_pos=100)

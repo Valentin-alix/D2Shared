@@ -6,7 +6,7 @@ import numpy as np
 
 PAUSE: float = 0.05
 RANGE_DURATION_ACTIVITY: tuple[float, float] = (0.6, 1.4)
-RANGE_NEW_MAP: tuple[float, float] = (0.5, 6)
+RANGE_NEW_MAP: tuple[float, float] = (1, 6)
 RANGE_OFFSET: tuple[float, float] = (0.95, 1)
 RANGE_WAIT: tuple[float, float] = (0.3, 0.7)
 

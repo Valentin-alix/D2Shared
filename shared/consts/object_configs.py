@@ -245,7 +245,7 @@ class ObjectConfigs:
 
     class PathFinding:
         zaapi = ObjectSearchConfig(
-            ref="path_finding.zaapi", cache_info=CacheInfo(min_parsed_count_on_map=1)
+            ref="path_finding.zaapi", cache_info=CacheInfo(min_parsed_count_on_map=1, max_placement=None)
         )
         lotery_havre_sac = ObjectSearchConfig(
             ref="path_finding.lotery_havre_sac", lookup_region=CONTENT_REGION
