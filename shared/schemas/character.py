@@ -27,3 +27,6 @@ class CharacterSchema(BaseSchemaOrm):
 
     def __hash__(self) -> int:
         return self.id.__hash__()
+
+    def __str__(self) -> str:
+        return self.id

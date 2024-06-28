@@ -13,3 +13,9 @@ class MapDirectionSchema(BaseSchemaOrm):
 
     def __hash__(self) -> int:
         return self.id.__hash__()
+
+    def __str__(self) -> str:
+        return f"{self.from_map_id} {self.from_direction} -> {self.to_map_id} {self.to_direction}"
+
+    def __repr__(self) -> str:
+        return self.__str__()
