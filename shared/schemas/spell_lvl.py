@@ -76,6 +76,9 @@ class SpellLevelSchema(BaseSchemaOrm):
     def __hash__(self) -> int:
         return self.id.__hash__()
 
+    def __str__(self) -> str:
+        return self.spell.name
+
     def get_pos_spell(self) -> Position:
         line_brut = (self.spell.default_index + 10) // 10
         col = self.spell.default_index % 10
