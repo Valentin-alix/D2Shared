@@ -27,5 +27,8 @@ class ObjectSearchConfig(BaseModel):
     def __str__(self) -> str:
         return self.id
 
+    def __repr__(self) -> str:
+        return self.__str__()
+
     def __hash__(self) -> int:
         return self.id.__hash__()

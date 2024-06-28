@@ -22,6 +22,11 @@ class BaseMapSchema(BaseSchemaOrm):
     def __eq__(self, value: Any) -> bool:
         return isinstance(value, BaseMapSchema) and self.id == value.id
 
+    def __str__(self) -> str:
+        return (
+            f"x:{self.x} y:{self.y} monde:{self.world_id} sous zone:{self.sub_area_id}."
+        )
+
     def get_dist_map(self, map: "BaseMapSchema") -> float:
         # Manhattan distance
         if self.world_id != map.world_id:
