@@ -1,14 +1,9 @@
 import random
 import string
-from time import sleep
 
 import numpy as np
 
-PAUSE: float = 0.05
-RANGE_DURATION_ACTIVITY: tuple[float, float] = (0.6, 1.4)
-RANGE_NEW_MAP: tuple[float, float] = (1, 6)
 RANGE_OFFSET: tuple[float, float] = (0.95, 1)
-RANGE_WAIT: tuple[float, float] = (0.3, 0.7)
 
 
 def pick_random_weighted_time(mini: float, maxi: float) -> float:
@@ -26,11 +21,6 @@ def pick_random_weighted_time(mini: float, maxi: float) -> float:
 
 def multiply_offset(range: tuple[float, float] = RANGE_OFFSET):
     return random.uniform(*range)
-
-
-def wait(range: tuple[float, float] = RANGE_WAIT):
-    time = pick_random_weighted_time(*range)
-    sleep(time)
 
 
 def get_random_id(size=6, chars=string.ascii_uppercase + string.digits):
