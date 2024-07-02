@@ -3,9 +3,9 @@ from datetime import time
 from D2Shared.shared.schemas.base import BaseSchemaOrm
 from D2Shared.shared.schemas.range_time import (
     ReadRangeHourPlayTimeSchema,
-    ReadRangeTimeSchema,
+    ReadRangeWaitSchema,
     UpdateRangeHourPlayTimeSchema,
-    UpdateRangeTimeSchema,
+    UpdateRangeWaitSchema,
 )
 
 
@@ -22,15 +22,15 @@ class ReadConfigUserSchema(BaseConfigUserSchema):
     ranges_hour_playtime: list[ReadRangeHourPlayTimeSchema]
 
     range_new_map_id: int
-    range_new_map: ReadRangeTimeSchema
+    range_new_map: ReadRangeWaitSchema
 
     range_wait_id: int
-    range_wait: ReadRangeTimeSchema
+    range_wait: ReadRangeWaitSchema
 
     user_id: int
 
 
 class UpdateConfigUserSchema(BaseConfigUserSchema):
     ranges_hour_playtime: list[UpdateRangeHourPlayTimeSchema]
-    range_new_map: UpdateRangeTimeSchema
-    range_wait: UpdateRangeTimeSchema
+    range_new_map: UpdateRangeWaitSchema
+    range_wait: UpdateRangeWaitSchema

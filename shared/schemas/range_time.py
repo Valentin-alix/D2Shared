@@ -17,13 +17,13 @@ class ReadRangeHourPlayTimeSchema(BaseRangeHourPlayTimeSchema):
 class UpdateRangeHourPlayTimeSchema(BaseRangeHourPlayTimeSchema): ...
 
 
-class BaseRangeTimeSchema(BaseSchemaOrm):
-    start_time: time
-    end_time: time
+class BaseRangeWaitSchema(BaseSchemaOrm):
+    start: time
+    end: time
 
 
-class ReadRangeTimeSchema(BaseRangeTimeSchema):
+class ReadRangeWaitSchema(BaseRangeWaitSchema):
     id: int
 
 
-class UpdateRangeTimeSchema(BaseRangeTimeSchema): ...
+class UpdateRangeWaitSchema(BaseRangeWaitSchema): ...
