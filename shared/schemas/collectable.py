@@ -1,6 +1,6 @@
-from EzreD2Shared.shared.schemas.base import BaseSchemaOrm
-from EzreD2Shared.shared.schemas.item import ItemSchema
-from EzreD2Shared.shared.schemas.job import JobSchema
+from D2Shared.shared.schemas.base import BaseSchemaOrm
+from D2Shared.shared.schemas.item import ItemSchema
+from D2Shared.shared.schemas.job import JobSchema
 
 
 class CollectableSchema(BaseSchemaOrm):

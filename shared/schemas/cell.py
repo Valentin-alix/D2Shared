@@ -1,10 +1,10 @@
-from EzreD2Shared.shared.consts.adaptative.consts import (
+from D2Shared.shared.consts.adaptative.consts import (
     GRID_CELL_HEIGHT,
     GRID_CELL_WIDTH,
 )
-from EzreD2Shared.shared.entities.position import Position
-from EzreD2Shared.shared.enums import TypeCellEnum
-from EzreD2Shared.shared.schemas.region import RegionSchema
+from D2Shared.shared.entities.position import Position
+from D2Shared.shared.enums import TypeCellEnum
+from D2Shared.shared.schemas.region import RegionSchema
 
 
 import numpy
@@ -31,10 +31,7 @@ class CellSchema(BaseModel):
 
     def get_region(
         self, offset: tuple[int, int, int, int] = (0, 0, 0, 0)
-    ) -> (
-        RegionSchema
-    ):  # We use an area instead of a form for better performance when checking color of cell
-
+    ) -> RegionSchema:  # We use an area instead of a form for better performance when checking color of cell
         x_center, y_center = self.center_pos.to_xy()
 
         left_offset, right_offset, top_offset, bot_offset = offset

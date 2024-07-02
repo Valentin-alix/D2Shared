@@ -1,5 +1,5 @@
-from EzreD2Shared.shared.schemas.base import BaseSchemaOrm
-from EzreD2Shared.shared.schemas.item import ItemSchema
+from D2Shared.shared.schemas.base import BaseSchemaOrm
+from D2Shared.shared.schemas.item import ItemSchema
 
 
 class DropSchema(BaseSchemaOrm):

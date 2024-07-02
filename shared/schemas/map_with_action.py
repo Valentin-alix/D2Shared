@@ -2,10 +2,10 @@ from typing import Any
 
 from pydantic import BaseModel
 
-from EzreD2Shared.shared.enums import FromDirection
-from EzreD2Shared.shared.schemas.map_direction import MapDirectionSchema
-from EzreD2Shared.shared.schemas.waypoint import WaypointSchema
-from EzreD2Shared.shared.schemas.zaapi import ZaapiSchema
+from D2Shared.shared.enums import FromDirection
+from D2Shared.shared.schemas.map_direction import MapDirectionSchema
+from D2Shared.shared.schemas.waypoint import WaypointSchema
+from D2Shared.shared.schemas.zaapi import ZaapiSchema
 
 type ActionMapChangeSchema = MapDirectionSchema | ZaapiSchema | WaypointSchema
 

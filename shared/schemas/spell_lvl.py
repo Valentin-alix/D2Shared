@@ -1,15 +1,15 @@
 from pydantic import BaseModel
 
-from EzreD2Shared.shared.consts.adaptative.consts import SPELL_CELL_SIZE
-from EzreD2Shared.shared.consts.adaptative.positions import (
+from D2Shared.shared.consts.adaptative.consts import SPELL_CELL_SIZE
+from D2Shared.shared.consts.adaptative.positions import (
     EMPTY_POSITION,
     FIRST_SPELL_BAR_POSITION,
 )
-from EzreD2Shared.shared.entities.position import Position
-from EzreD2Shared.shared.enums import DispellableEnum
-from EzreD2Shared.shared.schemas.base import BaseSchemaOrm
-from EzreD2Shared.shared.schemas.breed import BreedSchema
-from EzreD2Shared.shared.schemas.effect import EffectSchema
+from D2Shared.shared.entities.position import Position
+from D2Shared.shared.enums import DispellableEnum
+from D2Shared.shared.schemas.base import BaseSchemaOrm
+from D2Shared.shared.schemas.breed import BreedSchema
+from D2Shared.shared.schemas.effect import EffectSchema
 
 
 class SpellVariantSchema(BaseSchemaOrm):

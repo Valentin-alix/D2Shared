@@ -1,4 +1,4 @@
-from EzreD2Shared.shared.schemas.base import BaseSchemaOrm
+from D2Shared.shared.schemas.base import BaseSchemaOrm
 
 
 class AreaSchema(BaseSchemaOrm):

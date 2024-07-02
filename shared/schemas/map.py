@@ -1,7 +1,7 @@
 from typing import Any
 
-from EzreD2Shared.shared.schemas.base import BaseSchemaOrm
-from EzreD2Shared.shared.schemas.world import WorldSchema
+from D2Shared.shared.schemas.base import BaseSchemaOrm
+from D2Shared.shared.schemas.world import WorldSchema
 
 
 class BaseMapSchema(BaseSchemaOrm):
@@ -44,7 +44,7 @@ class MapSchema(BaseMapSchema):
     # collectables_map_info: list[CollectableMapInfoSchema]
 
 
-from EzreD2Shared.shared.schemas.sub_area import SubAreaSchema
-from EzreD2Shared.shared.schemas.waypoint import WaypointSchema
+from D2Shared.shared.schemas.sub_area import SubAreaSchema
+from D2Shared.shared.schemas.waypoint import WaypointSchema
 
 MapSchema.model_rebuild()

@@ -1,6 +1,6 @@
 from pydantic import BaseModel
 
-from EzreD2Shared.shared.schemas.base import BaseSchemaOrm
+from D2Shared.shared.schemas.base import BaseSchemaOrm
 
 from .region import RegionSchema
 

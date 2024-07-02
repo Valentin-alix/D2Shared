@@ -1,4 +1,4 @@
-from EzreD2Shared.shared.enums import FromDirection, ToDirection
+from D2Shared.shared.enums import FromDirection, ToDirection
 
 
 def get_inverted_direction(direction: ToDirection) -> FromDirection:

@@ -1,6 +1,6 @@
 from pydantic import BaseModel, ConfigDict
 
-from EzreD2Shared.shared.enums import CategoryZaapiEnum
+from D2Shared.shared.enums import CategoryZaapiEnum
 
 
 class ZaapiSchema(BaseModel):

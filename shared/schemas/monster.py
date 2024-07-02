@@ -1,5 +1,5 @@
-from EzreD2Shared.shared.schemas.base import BaseSchemaOrm
-from EzreD2Shared.shared.schemas.drop import DropSchema
+from D2Shared.shared.schemas.base import BaseSchemaOrm
+from D2Shared.shared.schemas.drop import DropSchema
 
 
 class MonsterSchema(BaseSchemaOrm):
