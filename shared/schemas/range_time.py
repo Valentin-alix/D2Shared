@@ -18,8 +18,8 @@ class UpdateRangeHourPlayTimeSchema(BaseRangeHourPlayTimeSchema): ...
 
 
 class BaseRangeWaitSchema(BaseSchemaOrm):
-    start: time
-    end: time
+    start: float
+    end: float
 
 
 class ReadRangeWaitSchema(BaseRangeWaitSchema):
