@@ -24,13 +24,9 @@ class ReadConfigUserSchema(BaseConfigUserSchema):
     range_new_map_id: int
     range_new_map: ReadRangeWaitSchema
 
-    range_wait_id: int
-    range_wait: ReadRangeWaitSchema
-
     user_id: int
 
 
 class UpdateConfigUserSchema(BaseConfigUserSchema):
     ranges_hour_playtime: list[UpdateRangeHourPlayTimeSchema]
     range_new_map: UpdateRangeWaitSchema
-    range_wait: UpdateRangeWaitSchema
