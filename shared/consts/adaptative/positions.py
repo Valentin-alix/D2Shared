@@ -1,3 +1,10 @@
+from ...consts.adaptative.consts import (
+    LINE_COUNT,
+    LINE_HEIGHT,
+    LINES_START_Y,
+    X_COLUMN_RUNES,
+)
+from ...consts.adaptative.regions import MERGE_AREA
 from ...entities.position import Position
 
 # general
@@ -94,3 +101,22 @@ TOP_MAP_RIGHT_CHANGE_POSITION = Position(x_pos=1325, y_pos=8)
 BOTTOM_RIGHT_MAP_CHANGE_POSITION = Position(x_pos=550, y_pos=885)
 BOTTOM_MAP_CHANGE_POSITION = Position(x_pos=975, y_pos=885)
 BOTTOM_LEFT_MAP_CHANGE_POSITION = Position(x_pos=1325, y_pos=885)
+
+# for fm
+MERGE_POSITION = Position(
+    x_pos=(MERGE_AREA.left + MERGE_AREA.right) // 2,
+    y_pos=(MERGE_AREA.top + MERGE_AREA.bot) // 2,
+)
+LINES_COLUMNS_POSITION = [
+    [
+        Position(
+            y_pos=int(LINES_START_Y + LINE_HEIGHT * (line + 0.5)), x_pos=column_rune
+        )
+        for column_rune in X_COLUMN_RUNES
+    ]
+    for line in range(LINE_COUNT)
+]
+FIRST_OBJECT_INVENTORY_POSITION = Position(x_pos=1314, y_pos=182)
+RESOURCES_INVENTORY_POSITION = Position(x_pos=1494, y_pos=101)
+CLEAR_SEARCH_INVENTORY_POSITION = Position(x_pos=1586, y_pos=75)
+SEARCH_INVENTORY_POSITION = Position(x_pos=1382, y_pos=769)

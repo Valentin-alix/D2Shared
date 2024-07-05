@@ -1,4 +1,11 @@
 # general
+from ...consts.adaptative.consts import (
+    LINE_COUNT,
+    LINE_END_X,
+    LINE_HEIGHT,
+    LINE_START_X,
+    LINES_START_Y,
+)
 from ...schemas.region import RegionSchema
 
 INVENTORY_RIGHT_CROSS_REGION = RegionSchema(left=1530, top=25, right=1588, bot=112)
@@ -56,3 +63,16 @@ CREATURE_MODE_REGION = RegionSchema(left=1300, top=970, right=1450, bot=1020)
 HELP_LOCK_FIGHT_PREP_REGION = RegionSchema(left=1330, top=860, right=1420, bot=910)
 PA_REGION = RegionSchema(left=742, top=977, right=767, bot=999)
 RIP_REGION = RegionSchema(left=735, top=450, right=865, bot=595)
+
+
+MERGE_AREA = RegionSchema(left=961, top=212, right=1142, bot=232)
+HISTORY_AREA = RegionSchema(left=315, top=126, right=641, bot=835)
+LINE_AREAS = [
+    RegionSchema(
+        left=LINE_START_X,
+        top=int((LINE_HEIGHT * line) + LINES_START_Y),
+        right=LINE_END_X,
+        bot=int((LINE_HEIGHT * (line + 1)) + LINES_START_Y),
+    )
+    for line in range(LINE_COUNT)
+]

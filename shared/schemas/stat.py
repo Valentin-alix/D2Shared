@@ -8,13 +8,13 @@ class StatSchema(BaseSchemaOrm):
     id: int
     name: str
     weight: float
+    runes: list[RuneSchema]
 
 
 class RuneSchema(BaseSchemaOrm):
     id: int
     name: str
     stat_id: int
-    stat: StatSchema
     stat_quantity: int
 
 
