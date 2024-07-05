@@ -12,3 +12,14 @@ def clean_item_name(name: str) -> str:
         .replace("/", "_")
         .lower()
     )
+
+
+def clean_line_text(text: str) -> str:
+    normalized_text = (
+        unidecode.unidecode(text, "utf-8")
+        .replace(" ", "")
+        .replace("\n", "")
+        .replace(".", "")
+        .lower()
+    )
+    return normalized_text

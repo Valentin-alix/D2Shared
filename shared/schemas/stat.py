@@ -10,6 +10,12 @@ class StatSchema(BaseSchemaOrm):
     weight: float
     runes: list[RuneSchema]
 
+    def __str__(self) -> str:
+        return self.name
+
+    def __repr__(self) -> str:
+        return self.__str__()
+
 
 class RuneSchema(BaseSchemaOrm):
     id: int
