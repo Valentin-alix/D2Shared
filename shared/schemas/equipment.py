@@ -10,5 +10,11 @@ class BaseEquipmentSchema(BaseSchemaOrm):
 class ReadEquipmentSchema(BaseEquipmentSchema):
     id: int
 
+    def __eq__(self, value: object) -> bool:
+        return isinstance(value, ReadEquipmentSchema) and self.id == value.id
+
+    def __hash__(self) -> int:
+        return self.id.__hash__()
+
 
 class UpdateEquipmentSchema(BaseEquipmentSchema): ...
