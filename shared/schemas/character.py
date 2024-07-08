@@ -8,6 +8,7 @@ class CharacterJobInfoSchema(BaseSchemaOrm):
     job_id: int
     job: JobSchema
     lvl: int
+    weight: float
 
     def __hash__(self) -> int:
         return (self.character_id, self.job_id).__hash__()
