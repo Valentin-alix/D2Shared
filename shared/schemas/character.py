@@ -1,7 +1,6 @@
 from D2Shared.shared.enums import BreedEnum, ElemEnum
 from D2Shared.shared.schemas.base import BaseSchemaOrm
 from D2Shared.shared.schemas.job import JobSchema
-from D2Shared.shared.schemas.sub_area import SubAreaSchema
 
 
 class CharacterJobInfoSchema(BaseSchemaOrm):
@@ -24,7 +23,6 @@ class CharacterSchema(BaseSchemaOrm):
     breed_id: int = BreedEnum.ENI
     elem: ElemEnum = ElemEnum.ELEMENT_WATER
     server_id: int
-    sub_areas: list[SubAreaSchema]
     # character_job_info: list[CharacterJobInfoSchema]
     # max_pods: int
 
