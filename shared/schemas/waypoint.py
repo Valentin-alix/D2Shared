@@ -8,6 +8,9 @@ class WaypointSchema(BaseSchemaOrm):
     map_id: int
     map: "BaseMapSchema"
 
+    def __eq__(self, value: object) -> bool:
+        return isinstance(value, WaypointSchema) and self.id == value.id
+
     def __hash__(self) -> int:
         return self.id.__hash__()
 

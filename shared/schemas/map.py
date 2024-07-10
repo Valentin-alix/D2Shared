@@ -11,6 +11,7 @@ class BaseMapSchema(BaseSchemaOrm):
     world_id: int = 1
 
     sub_area_id: int
+    sub_area: "SubAreaSchema"
 
     allow_teleport_from: bool
     allow_monster_fight: bool
