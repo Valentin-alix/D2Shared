@@ -1,3 +1,8 @@
+from typing import Any
+
+import numpy
+from pydantic import BaseModel, ConfigDict, Field
+
 from D2Shared.shared.consts.adaptative.consts import (
     GRID_CELL_HEIGHT,
     GRID_CELL_WIDTH,
@@ -5,14 +10,6 @@ from D2Shared.shared.consts.adaptative.consts import (
 from D2Shared.shared.entities.position import Position
 from D2Shared.shared.enums import TypeCellEnum
 from D2Shared.shared.schemas.region import RegionSchema
-
-
-import numpy
-from pydantic import BaseModel, ConfigDict, Field
-
-
-import math
-from typing import Any
 
 
 class CellSchema(BaseModel):
@@ -99,7 +96,14 @@ class CellSchema(BaseModel):
         )
 
     def get_dist_cell(self, cell: "CellSchema") -> int:
-        return round(math.sqrt((self.col - cell.col) ** 2 + (self.row - cell.row) ** 2))
+        # v1, doesn't work but its official version ?
+        # return round(math.sqrt((self.col - cell.col) ** 2 + (self.row - cell.row) ** 2))
+        # this is v2, it work a little bit better, but not as expected
+        return round(
+            (abs(self.center_pos.x_pos - cell.center_pos.x_pos) / GRID_CELL_WIDTH)
+            + (abs(self.center_pos.y_pos - cell.center_pos.y_pos) / GRID_CELL_HEIGHT)
+            * 2
+        )
 
     def is_closer(self, cell: "CellSchema|None", target_cell: "CellSchema") -> bool:
         if cell is None:
