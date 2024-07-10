@@ -2,7 +2,7 @@ from typing import Iterator
 
 
 def bresenham_dofus(
-    start_x: int, start_y: int, end_x: int, end_y: int
+    start_x: int, start_y: int, end_x: int, end_y: int, log: bool = False
 ) -> list[tuple[int, int]]:
     # taken from https://gist.github.com/SuperJudeFruit/ade08bda7c4ff31ee7298f4206cceeff#file-bresenham_dofus-py
 
