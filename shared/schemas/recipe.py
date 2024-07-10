@@ -14,6 +14,9 @@ class RecipeSchema(BaseSchemaOrm):
 
     receipe_pod_cost: int
 
+    def __eq__(self, value: object) -> bool:
+        return isinstance(value, RecipeSchema) and self.id == value.id
+
     def __hash__(self) -> int:
         return self.id.__hash__()
 
