@@ -1,3 +1,4 @@
+from collections import deque
 from typing import Any
 
 import numpy
@@ -10,7 +11,6 @@ from D2Shared.shared.consts.adaptative.consts import (
 from D2Shared.shared.entities.position import Position
 from D2Shared.shared.enums import TypeCellEnum
 from D2Shared.shared.schemas.region import RegionSchema
-from D2Shared.shared.utils.algos.bfs import bfs
 
 
 class CellSchema(BaseModel):
@@ -97,7 +97,23 @@ class CellSchema(BaseModel):
         )
 
     def get_dist_cell(self, cell: "CellSchema") -> int:
-        return bfs(self, cell)
+        # using bfs algo https://en.wikipedia.org/wiki/Breadth-first_search
+        queue: deque[tuple[CellSchema, int]] = deque([(self, 0)])
+        visited: set[CellSchema] = set()
+        visited.add(self)
+
+        while queue:
+            (current_cell, distance) = queue.popleft()
+
+            if current_cell == cell:
+                return distance
+
+            for neighbor in current_cell.neighbors:
+                if neighbor not in visited:
+                    visited.add(neighbor)
+                    queue.append((neighbor, distance + 1))
+
+        raise ValueError(f"Did not found dist for {self} to {cell}")
 
     def is_closer(self, cell: "CellSchema|None", target_cell: "CellSchema") -> bool:
         if cell is None:
