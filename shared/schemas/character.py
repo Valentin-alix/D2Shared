@@ -1,6 +1,10 @@
 from D2Shared.shared.enums import ElemEnum
 from D2Shared.shared.schemas.base import BaseSchemaOrm
+from D2Shared.shared.schemas.item import ItemSchema
 from D2Shared.shared.schemas.job import JobSchema
+from D2Shared.shared.schemas.spell import SpellSchema
+from D2Shared.shared.schemas.sub_area import SubAreaSchema
+from D2Shared.shared.schemas.waypoint import WaypointSchema
 
 
 class CharacterJobInfoSchema(BaseSchemaOrm):
@@ -22,8 +26,12 @@ class CharacterSchema(BaseSchemaOrm):
     time_spent: float = 0
     elem: ElemEnum = ElemEnum.ELEMENT_WATER
     server_id: int
-    # character_job_info: list[CharacterJobInfoSchema]
-    # max_pods: int
+    character_job_info: list[CharacterJobInfoSchema]
+    max_pods: int
+    waypoints: list[WaypointSchema]
+    sub_areas: list[SubAreaSchema]
+    spells: list[SpellSchema]
+    bank_items: list[ItemSchema]
 
     def __hash__(self) -> int:
         return self.id.__hash__()
