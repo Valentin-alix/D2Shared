@@ -10,7 +10,7 @@ from D2Shared.shared.enums import CharacteristicEnum, ElemEnum
 from D2Shared.shared.schemas.base import BaseSchemaOrm
 
 
-class SpellSchema(BaseSchemaOrm):
+class BaseSpellSchema(BaseSchemaOrm):
     name: str
     character_id: str
     index: int
@@ -26,9 +26,6 @@ class SpellSchema(BaseSchemaOrm):
     duration_boost: int
     boostable_range: bool
     level: int
-
-    def __hash__(self) -> int:
-        return (self.index, self.character_id).__hash__()
 
     def get_pos_spell(self) -> Position:
         line_brut = (self.index + 10) // 10
@@ -48,6 +45,16 @@ class SpellSchema(BaseSchemaOrm):
             x_pos=FIRST_SPELL_BAR_POSITION.x_pos + SPELL_CELL_SIZE * (col),
             y_pos=FIRST_SPELL_BAR_POSITION.y_pos + SPELL_CELL_SIZE * (line),
         )
+
+
+class UpdateSpellSchema(BaseSpellSchema): ...
+
+
+class SpellSchema(BaseSpellSchema):
+    id: int
+
+    def __hash__(self) -> int:
+        return self.id.__hash__()
 
 
 class CurrentBoostSchema(BaseModel):
