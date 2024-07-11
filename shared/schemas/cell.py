@@ -1,3 +1,4 @@
+from collections import deque
 from typing import Any
 
 import numpy
@@ -96,14 +97,23 @@ class CellSchema(BaseModel):
         )
 
     def get_dist_cell(self, cell: "CellSchema") -> int:
-        # v1, doesn't work but its official version ?
-        # return round(math.sqrt((self.col - cell.col) ** 2 + (self.row - cell.row) ** 2))
-        # this is v2, it work a little bit better, but not as expected
-        return round(
-            (abs(self.center_pos.x_pos - cell.center_pos.x_pos) / GRID_CELL_WIDTH)
-            + (abs(self.center_pos.y_pos - cell.center_pos.y_pos) / GRID_CELL_HEIGHT)
-            * 2
-        )
+        # using bfs algo https://en.wikipedia.org/wiki/Breadth-first_search
+        queue: deque[tuple[CellSchema, int]] = deque([(self, 0)])
+        visited: set[CellSchema] = set()
+        visited.add(self)
+
+        while queue:
+            (current_cell, distance) = queue.popleft()
+
+            if current_cell == cell:
+                return distance
+
+            for neighbor in current_cell.neighbors:
+                if neighbor not in visited:
+                    visited.add(neighbor)
+                    queue.append((neighbor, distance + 1))
+
+        raise ValueError(f"Did not found dist for {self} to {cell}")
 
     def is_closer(self, cell: "CellSchema|None", target_cell: "CellSchema") -> bool:
         if cell is None:
