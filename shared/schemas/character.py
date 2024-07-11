@@ -1,6 +1,5 @@
 from D2Shared.shared.enums import ElemEnum
 from D2Shared.shared.schemas.base import BaseSchemaOrm
-from D2Shared.shared.schemas.item import ItemSchema
 from D2Shared.shared.schemas.job import JobSchema
 from D2Shared.shared.schemas.spell import SpellSchema
 from D2Shared.shared.schemas.sub_area import SubAreaSchema
@@ -31,7 +30,6 @@ class CharacterSchema(BaseSchemaOrm):
     waypoints: list[WaypointSchema]
     sub_areas: list[SubAreaSchema]
     spells: list[SpellSchema]
-    bank_items: list[ItemSchema]
 
     def __hash__(self) -> int:
         return self.id.__hash__()
