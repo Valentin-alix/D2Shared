@@ -16,7 +16,7 @@ class BaseSpellSchema(BaseSchemaOrm):
     index: int
     elem: ElemEnum
     is_disenchantment: bool
-    boost_char: CharacteristicEnum
+    boost_char: CharacteristicEnum | None
     is_healing: bool
     is_for_enemy: bool
     ap_cost: int
