@@ -1,4 +1,4 @@
-from D2Shared.shared.enums import BreedEnum, ElemEnum
+from D2Shared.shared.enums import ElemEnum
 from D2Shared.shared.schemas.base import BaseSchemaOrm
 from D2Shared.shared.schemas.job import JobSchema
 
@@ -20,7 +20,6 @@ class CharacterSchema(BaseSchemaOrm):
     po_bonus: int = 0
     is_sub: bool = True
     time_spent: float = 0
-    breed_id: int = BreedEnum.ENI
     elem: ElemEnum = ElemEnum.ELEMENT_WATER
     server_id: int
     # character_job_info: list[CharacterJobInfoSchema]

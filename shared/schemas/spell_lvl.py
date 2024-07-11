@@ -6,82 +6,34 @@ from D2Shared.shared.consts.adaptative.positions import (
     FIRST_SPELL_BAR_POSITION,
 )
 from D2Shared.shared.entities.position import Position
-from D2Shared.shared.enums import DispellableEnum
+from D2Shared.shared.enums import CharacteristicEnum, ElemEnum
 from D2Shared.shared.schemas.base import BaseSchemaOrm
-from D2Shared.shared.schemas.breed import BreedSchema
-from D2Shared.shared.schemas.effect import EffectSchema
-
-
-class SpellVariantSchema(BaseSchemaOrm):
-    id: int
-    breed_id: int
-    breed: BreedSchema
-    spells: list["SpellSchema"]
-
-    def __hash__(self) -> int:
-        return self.id.__hash__()
 
 
 class SpellSchema(BaseSchemaOrm):
     id: int
     name: str
-    spell_variant_id: int
-    default_index: int
-
-    def __hash__(self) -> int:
-        return self.id.__hash__()
-
-
-class SpellLevelEffect(BaseSchemaOrm):
-    id: int
-    spell_level_id: int
-    spell_level: "SpellLevelSchema"
-    effect_id: int
-    effect: EffectSchema
-    duration: int
-    dispellable: DispellableEnum
-
-    def __hash__(self) -> int:
-        return self.id.__hash__()
-
-
-class SpellLevelSchema(BaseSchemaOrm):
-    id: int
-    spell_id: int
-    spell: SpellSchema
+    character_id: int
+    index: int
+    elem: ElemEnum
+    is_disenchantment: bool
+    boost_char: CharacteristicEnum
+    is_healing: bool
+    is_for_enemy: bool
     ap_cost: int
     max_cast: int
     min_range: int
     range: int
-    can_cast_in_line: bool
-    can_cast_in_diagonal: bool
-    need_los: bool
-
-    is_disenchantment: bool
-    is_boost: bool
-    is_healing: bool
-    on_enemy: bool
     duration_boost: int
-
-    need_free_cell: bool
-    need_taken_cell: bool
-    need_visible_entity: bool
-    range_can_be_boosted: bool
-    max_stack: int
-    min_cast_interval: int
-    initial_cooldown: int
-    global_cooldown: int
-    min_player_level: int
+    boostable_range: bool
+    level: int
 
     def __hash__(self) -> int:
         return self.id.__hash__()
 
-    def __str__(self) -> str:
-        return self.spell.name
-
     def get_pos_spell(self) -> Position:
-        line_brut = (self.spell.default_index + 10) // 10
-        col = self.spell.default_index % 10
+        line_brut = (self.index + 10) // 10
+        col = self.index % 10
 
         num_page = line_brut // 2
         if line_brut % 2 == 1:
