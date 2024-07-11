@@ -11,9 +11,8 @@ from D2Shared.shared.schemas.base import BaseSchemaOrm
 
 
 class SpellSchema(BaseSchemaOrm):
-    id: int
     name: str
-    character_id: int
+    character_id: str
     index: int
     elem: ElemEnum
     is_disenchantment: bool
@@ -29,7 +28,7 @@ class SpellSchema(BaseSchemaOrm):
     level: int
 
     def __hash__(self) -> int:
-        return self.id.__hash__()
+        return (self.index, self.character_id).__hash__()
 
     def get_pos_spell(self) -> Position:
         line_brut = (self.index + 10) // 10
