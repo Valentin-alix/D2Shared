@@ -4,7 +4,13 @@ from D2Shared.shared.schemas.base import BaseSchemaOrm
 from D2Shared.shared.schemas.world import WorldSchema
 
 
-class BaseMapSchema(BaseSchemaOrm):
+class CoordinatesMapSchema(BaseSchemaOrm):
+    x: int
+    y: int
+    world_id: int = 1
+
+
+class BaseMapSchema(CoordinatesMapSchema):
     id: int
     x: int
     y: int
