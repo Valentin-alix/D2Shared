@@ -17,7 +17,7 @@ class CharacterJobInfoSchema(BaseSchemaOrm):
         return (self.character_id, self.job_id).__hash__()
 
 
-class CharacterSchema(BaseSchemaOrm):
+class BaseCharacterSchema(BaseSchemaOrm):
     id: str
     lvl: int = 1
     po_bonus: int = 0
@@ -25,6 +25,12 @@ class CharacterSchema(BaseSchemaOrm):
     time_spent: float = 0
     elem: ElemEnum = ElemEnum.ELEMENT_WATER
     server_id: int
+
+
+class UpdateCharacterSchema(BaseCharacterSchema): ...
+
+
+class CharacterSchema(BaseCharacterSchema):
     character_job_info: list[CharacterJobInfoSchema]
     max_pods: int
     waypoints: list[WaypointSchema]
