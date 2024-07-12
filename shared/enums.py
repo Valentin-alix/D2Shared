@@ -5,30 +5,33 @@ class ServerNameEnum(StrEnum):
     IMAGIRO = "Imagiro"
 
 
-class AreaEnum(IntEnum):
-    INCARNAM = 45
-    ASTRUB = 18
+class AreaEnum(StrEnum):
+    INCARNAM = "Incarnam"
+    ASTRUB = "Astrub"
+    AMAKNA = "Amakna"
+    BONTA = "Bonta"
+    CANIA_PLAIN = "Plaines de Cania"
+    BRAKMAR = "Brâkmar"
+    SIDIMOTE_LAND = "Landes de Sidimote"
+    OTOMAI_ISLAND = "Île d'Otomaï"
+    FRIGOST_ISLAND = "Île de Frigost"
+    KOALAK_MONTAIN = "Montagne des Koalaks"
 
 
-class BreedEnum(IntEnum):
-    ENI = 7
-    ENU = 3
+class CharacteristicEnum(StrEnum):
+    PA = "Pa"
+    PM = "Pm"
+    PO = "Po"
+    CHANCE = "Chance"
+    VITALITY = "Vitalité"
 
 
-class CharacteristicEnum(IntEnum):
-    PA = 1
-    PM = 23
-    PO = 19
-    CHANCE = 13
-    VITALITY = 11
-
-
-class ElemEnum(IntEnum):
-    ELEMENT_NEUTRAL = 0
-    ELEMENT_EARTH = 1
-    ELEMENT_FIRE = 2
-    ELEMENT_WATER = 3
-    ELEMENT_AIR = 4
+class ElemEnum(StrEnum):
+    ELEMENT_NEUTRAL = "Neutre"
+    ELEMENT_EARTH = "Terre"
+    ELEMENT_FIRE = "Feu"
+    ELEMENT_WATER = "Eau"
+    ELEMENT_AIR = "Air"
 
 
 class JobEnum(StrEnum):
@@ -88,12 +91,6 @@ class FromDirection(IntEnum):
     WAYPOINT = auto()
     ZAAPI = auto()
     UNKNOWN = auto()
-
-
-class DispellableEnum(IntEnum):
-    IS_DISPELLABLE = 1
-    IS_DISPELLABLE_ONLY_BY_DEATH = 2
-    IS_NOT_DISPELLABLE = 3
 
 
 class CategoryEnum(IntEnum):

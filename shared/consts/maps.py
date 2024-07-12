@@ -1,16 +1,36 @@
-BONTA_WORKSHOP_WOODCUTTER_MAP_ID: int = 212602885
-BONTA_WORKSHOP_FISHER_MAP_ID: int = 212599302
-BONTA_WORKSHOP_PEASANT_MAP_ID: int = 212601353
-BONTA_WORKSHOP_ALCHEMIST_MAP_ID: int = 212602375
+from D2Shared.shared.schemas.map import CoordinatesMapSchema
 
-BONTA_SALE_HOTEL_RESOURCE_MAP_ID: int = 212601350
-BONTA_SALE_HOTEL_CONSUMABLE_MAP_ID: int = 212600839
+BONTA_WORKSHOP_WOODCUTTER_MAP_CN: CoordinatesMapSchema = CoordinatesMapSchema(
+    x=-28, y=-56, world_id=1
+)
+BONTA_WORKSHOP_FISHER_MAP_CN: CoordinatesMapSchema = CoordinatesMapSchema(
+    x=-34, y=-54, world_id=1
+)
+BONTA_WORKSHOP_PEASANT_MAP_CN: CoordinatesMapSchema = CoordinatesMapSchema(
+    x=-31, y=-52, world_id=1
+)
+BONTA_WORKSHOP_ALCHEMIST_MAP_CN: CoordinatesMapSchema = CoordinatesMapSchema(
+    x=-29, y=-54, world_id=1
+)
 
-ASTRUB_SALE_HOTEL_RESOURCE_MAP_ID: int = 191104004
-ASTRUB_SALE_HOTEL_CONSUMABLE_MAP_ID: int = 191102976
+BONTA_SALE_HOTEL_RESOURCE_MAP_CN: CoordinatesMapSchema = CoordinatesMapSchema(
+    x=-30, y=-54, world_id=1
+)
+BONTA_SALE_HOTEL_CONSUMABLE_MAP_CN: CoordinatesMapSchema = CoordinatesMapSchema(
+    x=-31, y=-53, world_id=1
+)
 
-BONTA_BANK_MAP_ID: int = 212600322
-ASTRUB_BANK_MAP_ID: int = 191104002
-BONTA_ZAAP_MAP_ID: int = 212600323
-PORTAL_MAP_TWELVE_ID: int = 153880835
-PORTAL_MAP_INCARNAM_ID: int = 191106048
+ASTRUB_SALE_HOTEL_RESOURCE_MAP_CN: CoordinatesMapSchema = CoordinatesMapSchema(
+    x=4, y=-17, world_id=1
+)
+ASTRUB_SALE_HOTEL_CONSUMABLE_MAP_CN: CoordinatesMapSchema = CoordinatesMapSchema(
+    x=3, y=-19, world_id=1
+)
+
+BONTA_BANK_MAP_CN: CoordinatesMapSchema = CoordinatesMapSchema(x=-31, y=-57, world_id=1)
+ASTRUB_BANK_MAP_CN: CoordinatesMapSchema = CoordinatesMapSchema(x=4, y=-18, world_id=1)
+BONTA_ZAAP_MAP_CN: CoordinatesMapSchema = CoordinatesMapSchema(x=-31, y=-56, world_id=1)
+PORTAL_MAP_TWELVE_CN: CoordinatesMapSchema = CoordinatesMapSchema(x=4, y=-3, world_id=2)
+PORTAL_MAP_INCARNAM_CN: CoordinatesMapSchema = CoordinatesMapSchema(
+    x=6, y=-19, world_id=1
+)

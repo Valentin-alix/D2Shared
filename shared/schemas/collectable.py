@@ -12,10 +12,21 @@ class CollectableSchema(BaseSchemaOrm):
     job_id: int
     job: JobSchema
 
+    def __str__(self) -> str:
+        return self.item.name
+
+    def __repr__(self) -> str:
+        return self.__str__()
+
 
 class CollectableMapInfoSchema(BaseSchemaOrm):
     collectable_id: int
     map_id: int
     collectable: CollectableSchema
-    # map: "MapSchema"
     count: int
+
+    def __str__(self) -> str:
+        return f"{self.count} {str(self.collectable)}"
+
+    def __repr__(self) -> str:
+        return self.__str__()
