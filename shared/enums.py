@@ -26,6 +26,20 @@ class CharacteristicEnum(StrEnum):
     VITALITY = "Vitalité"
 
 
+class ExoStatEnum(StrEnum):
+    PA = "PA"
+    PM = "PM"
+    PO = "Portée"
+    INVO = "Invocation"
+    CHASSE = "Arme de chasse"
+    DO_PER_SO = "% Dommages aux sorts"
+    DO_PER_ME = "% Dommages mêlée"
+    DO_PER_DI = "% Dommages distance"
+    DO_PER_AR = "% Dommages d'armes"
+    RE_PER_ME = "% Résistance mêlée"
+    RE_PER_DI = "% Résistance distance"
+
+
 class ElemEnum(StrEnum):
     ELEMENT_NEUTRAL = "Neutre"
     ELEMENT_EARTH = "Terre"
