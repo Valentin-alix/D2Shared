@@ -10,7 +10,6 @@ class ReadEquipmentSchema(BaseEquipmentSchema):
     id: int
     lines: list[LineSchema]
     exo_line: LineSchema | None
-    count_attempt: int
 
     def __eq__(self, value: object) -> bool:
         return isinstance(value, ReadEquipmentSchema) and self.id == value.id
