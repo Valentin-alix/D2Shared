@@ -9,6 +9,9 @@ class CoordinatesMapSchema(BaseSchemaOrm):
     y: int
     world_id: int = 1
 
+    def __hash__(self) -> int:
+        return (self.x, self.y, self.world_id).__hash__()
+
 
 class BaseMapSchema(CoordinatesMapSchema):
     id: int
