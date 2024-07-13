@@ -1,4 +1,6 @@
-from pydantic import BaseModel
+from typing import Annotated
+
+from pydantic import BaseModel, PositiveInt, conint
 
 from D2Shared.shared.consts.adaptative.consts import SPELL_CELL_SIZE
 from D2Shared.shared.consts.adaptative.positions import (
@@ -13,19 +15,19 @@ from D2Shared.shared.schemas.base import BaseSchemaOrm
 class BaseSpellSchema(BaseSchemaOrm):
     name: str
     character_id: str
-    index: int
+    index: Annotated[int, conint(ge=0, le=20)]
     elem: ElemEnum
     is_disenchantment: bool
     boost_char: CharacteristicEnum | None
     is_healing: bool
     is_for_enemy: bool
-    ap_cost: int
-    max_cast: int
+    ap_cost: PositiveInt
+    max_cast: PositiveInt
     min_range: int
     range: int
     duration_boost: int
     boostable_range: bool
-    level: int
+    level: Annotated[int, conint(ge=0, le=200)]
 
     def get_pos_spell(self) -> Position:
         line_brut = (self.index + 10) // 10

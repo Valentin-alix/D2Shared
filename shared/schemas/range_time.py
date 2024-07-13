@@ -1,7 +1,6 @@
-from D2Shared.shared.schemas.base import BaseSchemaOrm
-
-
 from datetime import time
+
+from D2Shared.shared.schemas.base import BaseSchemaOrm
 
 
 class BaseRangeHourPlayTimeSchema(BaseSchemaOrm):
