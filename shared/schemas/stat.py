@@ -23,8 +23,12 @@ class RuneSchema(BaseSchemaOrm):
     stat_quantity: int
 
 
-class LineSchema(BaseSchemaOrm):
+class BaseLineSchema(BaseSchemaOrm):
     value: int
     stat_id: int
     stat: StatSchema
+
+
+class LineSchema(BaseLineSchema):
+    id: int
     spent_quantity: int
