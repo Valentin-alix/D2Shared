@@ -1,15 +1,16 @@
 from D2Shared.shared.schemas.base import BaseSchemaOrm
-from D2Shared.shared.schemas.stat import BaseLineSchema, LineSchema
+from D2Shared.shared.schemas.stat import BaseLineSchema, LineSchema, StatSchema
 
 
 class BaseEquipmentSchema(BaseSchemaOrm):
     label: str
+    exo_stat: StatSchema | None
 
 
 class ReadEquipmentSchema(BaseEquipmentSchema):
     id: int
     lines: list[LineSchema]
-    exo_line: LineSchema | None
+    exo_attempt: int
 
     def __eq__(self, value: object) -> bool:
         return isinstance(value, ReadEquipmentSchema) and self.id == value.id
@@ -20,4 +21,3 @@ class ReadEquipmentSchema(BaseEquipmentSchema):
 
 class UpdateEquipmentSchema(BaseEquipmentSchema):
     lines: list[BaseLineSchema]
-    exo_line: BaseLineSchema | None
