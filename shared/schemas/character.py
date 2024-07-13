@@ -1,3 +1,7 @@
+from typing import Annotated
+
+from pydantic import PositiveInt, conint
+
 from D2Shared.shared.enums import ElemEnum
 from D2Shared.shared.schemas.base import BaseSchemaOrm
 from D2Shared.shared.schemas.job import JobSchema
@@ -8,9 +12,9 @@ from D2Shared.shared.schemas.waypoint import WaypointSchema
 
 class CharacterJobInfoSchema(BaseSchemaOrm):
     character_id: str
-    job_id: int
+    job_id: PositiveInt
     job: JobSchema
-    lvl: int
+    lvl: Annotated[int, conint(ge=1, le=200)]
     weight: float
 
     def __hash__(self) -> int:
@@ -19,12 +23,12 @@ class CharacterJobInfoSchema(BaseSchemaOrm):
 
 class BaseCharacterSchema(BaseSchemaOrm):
     id: str
-    lvl: int = 1
+    lvl: Annotated[int, conint(ge=1, le=200)] = 1
     po_bonus: int = 0
     is_sub: bool = True
     time_spent: float = 0
     elem: ElemEnum = ElemEnum.ELEMENT_WATER
-    server_id: int
+    server_id: PositiveInt
 
 
 class UpdateCharacterSchema(BaseCharacterSchema): ...
