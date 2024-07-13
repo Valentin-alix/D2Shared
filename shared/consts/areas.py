@@ -54,12 +54,6 @@ FARMABLE_SUB_AREAS_BY_AREA: dict[str, list[str]] = {
         "Cirque de Cania",
         "Routes Rocailleuses",
     ],
-    AreaEnum.KOALAK_MONTAIN: [
-        "Village des Eleveurs",
-        "Lacs enchantés",
-        "Marécages nauséabonds",
-        "Marécages sans fond",
-    ],
     AreaEnum.SIDIMOTE_LAND: [
         "Désolation de Sidimote",
         "Gisgoul",
