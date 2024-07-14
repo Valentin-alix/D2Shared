@@ -5,6 +5,7 @@ from pydantic import PositiveInt, conint
 from D2Shared.shared.enums import ElemEnum
 from D2Shared.shared.schemas.base import BaseSchemaOrm
 from D2Shared.shared.schemas.job import JobSchema
+from D2Shared.shared.schemas.recipe import RecipeSchema
 from D2Shared.shared.schemas.spell import SpellSchema
 from D2Shared.shared.schemas.sub_area import SubAreaSchema
 from D2Shared.shared.schemas.waypoint import WaypointSchema
@@ -40,6 +41,7 @@ class CharacterSchema(BaseCharacterSchema):
     waypoints: list[WaypointSchema]
     sub_areas: list[SubAreaSchema]
     spells: list[SpellSchema]
+    recipes: list[RecipeSchema]
 
     def __hash__(self) -> int:
         return self.id.__hash__()
