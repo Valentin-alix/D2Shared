@@ -9,6 +9,12 @@ class StatSchema(BaseSchemaOrm):
     weight: float
     runes: list[RuneSchema]
 
+    def __hash__(self) -> int:
+        return self.id.__hash__()
+
+    def __eq__(self, value: object) -> bool:
+        return isinstance(value, StatSchema) and self.id == value.id
+
     def __str__(self) -> str:
         return self.name
 
