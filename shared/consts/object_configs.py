@@ -82,7 +82,7 @@ class ObjectConfigs:
             grey_scale=False,
             threshold=0.95,
             ref="check.small",
-            cache_info=CacheInfo(max_placement=2)
+            cache_info=CacheInfo(max_placement=2),
         )
         medium_inventory = ObjectSearchConfig(
             name="check.medium_inventory",
@@ -189,7 +189,10 @@ class ObjectConfigs:
             cache_info=None,
         )
         in_fight = ObjectSearchConfig(
-            ref="fight.in_fight", threshold=0.9, lookup_region=IN_FIGHT_REGION
+            ref="fight.in_fight",
+            threshold=0.9,
+            lookup_region=IN_FIGHT_REGION,
+            cache_info=None,
         )
         grave = ObjectSearchConfig(lookup_region=RIP_REGION, ref="fight.post.grave")
         phenix = ObjectSearchConfig(
@@ -245,7 +248,8 @@ class ObjectConfigs:
 
     class PathFinding:
         zaapi = ObjectSearchConfig(
-            ref="path_finding.zaapi", cache_info=CacheInfo(min_parsed_count_on_map=1, max_placement=None)
+            ref="path_finding.zaapi",
+            cache_info=CacheInfo(min_parsed_count_on_map=1, max_placement=None),
         )
         lotery_havre_sac = ObjectSearchConfig(
             ref="path_finding.lotery_havre_sac", lookup_region=CONTENT_REGION
