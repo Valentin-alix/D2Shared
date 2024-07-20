@@ -44,9 +44,16 @@ MAP_POSITION_REGION = RegionSchema(left=14, top=47, right=100, bot=75)
 # sale hotel
 SALE_HOTEL_FILTER_CHECK_REGION = RegionSchema(left=1250, top=822, right=1283, bot=850)
 SALE_HOTEL_QUANTITY_REGION = RegionSchema(left=475, top=287, right=511, bot=305)
-SALE_HOTEL_ONE_PRICE_REGION = RegionSchema(left=515, top=525, right=580, bot=550)
-SALE_HOTEL_TEN_PRICE_REGION = RegionSchema(left=515, top=565, right=580, bot=590)
-SALE_HOTEL_HUNDRED_PRICE_REGION = RegionSchema(left=515, top=605, right=580, bot=630)
+
+SALE_HOTEL_FIRST_PRICE_REGION = RegionSchema(left=515, top=525, right=580, bot=550)
+SALE_HOTEL_FIRST_QUANTITY_REGION = RegionSchema(left=450, top=522, right=485, bot=545)
+
+SALE_HOTEL_SECOND_PRICE_REGION = RegionSchema(left=515, top=565, right=580, bot=590)
+SALE_HOTEL_SECOND_QUANTITY_REGION = RegionSchema(left=450, top=565, right=485, bot=590)
+
+SALE_HOTEL_THIRD_PRICE_REGION = RegionSchema(left=515, top=605, right=580, bot=630)
+SALE_HOTEL_THIRD_QUANTITY_REGION = RegionSchema(left=450, top=610, right=485, bot=635)
+
 SALE_HOTEL_PLACE_SELL_REGION = RegionSchema(left=380, top=390, right=590, bot=440)
 SALE_HOTEL_TEN_QUANTITY_REGION = RegionSchema(left=485, top=340, right=506, bot=356)
 SALE_HOTEL_HUNDRED_QUANTITY_REGION = RegionSchema(left=485, top=365, right=515, bot=383)
