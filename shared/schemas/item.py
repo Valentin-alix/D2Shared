@@ -1,5 +1,4 @@
 from D2Shared.shared.schemas.base import BaseSchemaOrm
-from D2Shared.shared.schemas.price import PriceSchema
 from D2Shared.shared.schemas.type_item import TypeItemSchema
 
 
@@ -10,7 +9,6 @@ class ItemSchema(BaseSchemaOrm):
     type_item: TypeItemSchema
     level: int
     weight: int
-    prices: list[PriceSchema]
     icon_id: int | None = None
     is_saleable: bool
 
