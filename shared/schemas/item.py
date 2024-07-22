@@ -10,8 +10,7 @@ class ItemSchema(BaseSchemaOrm):
     type_item: TypeItemSchema
     level: int
     weight: int
-    price: PriceSchema
-    # recipe: "RecipeSchema"
+    prices: list[PriceSchema]
     icon_id: int | None = None
     is_saleable: bool
 
