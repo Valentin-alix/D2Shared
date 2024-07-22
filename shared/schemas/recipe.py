@@ -22,3 +22,6 @@ class RecipeSchema(BaseSchemaOrm):
 
     def __str__(self) -> str:
         return self.result_item.name
+
+    def __repr__(self) -> str:
+        return self.__str__()
