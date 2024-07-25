@@ -20,13 +20,6 @@ BONTA_SALE_HOTEL_CONSUMABLE_MAP_CN: CoordinatesMapSchema = CoordinatesMapSchema(
     x=-31, y=-53, world_id=1
 )
 
-ASTRUB_SALE_HOTEL_RESOURCE_MAP_CN: CoordinatesMapSchema = CoordinatesMapSchema(
-    x=4, y=-17, world_id=1
-)
-ASTRUB_SALE_HOTEL_CONSUMABLE_MAP_CN: CoordinatesMapSchema = CoordinatesMapSchema(
-    x=3, y=-19, world_id=1
-)
-
 BONTA_BANK_MAP_CN: CoordinatesMapSchema = CoordinatesMapSchema(x=-31, y=-57, world_id=1)
 ASTRUB_BANK_MAP_CN: CoordinatesMapSchema = CoordinatesMapSchema(x=4, y=-18, world_id=1)
 BONTA_ZAAP_MAP_CN: CoordinatesMapSchema = CoordinatesMapSchema(x=-31, y=-56, world_id=1)

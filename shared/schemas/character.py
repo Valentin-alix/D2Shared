@@ -26,7 +26,6 @@ class BaseCharacterSchema(BaseSchemaOrm):
     id: str
     lvl: Annotated[int, conint(ge=1, le=200)] = 1
     po_bonus: int = 0
-    is_sub: bool = True
     time_spent: float = 0
     elem: ElemEnum = ElemEnum.ELEMENT_WATER
     server_id: PositiveInt
