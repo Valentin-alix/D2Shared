@@ -10,7 +10,6 @@ from D2Shared.shared.schemas.range_time import (
 
 
 class BaseConfigUserSchema(BaseSchemaOrm):
-    afk_time_at_start: time | None = None
     time_between_sentence: time
     time_fighter: time
     time_harvester: time

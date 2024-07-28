@@ -38,10 +38,16 @@ class ObjectConfigs:
 
     class Ankama:
         play = ObjectSearchConfig(
-            ref="ankama.play", cache_info=CacheInfo(max_placement=2)
+            ref="ankama.play",
+            grey_scale=False,
+            threshold=0.95,
+            cache_info=CacheInfo(max_placement=2),
         )
         empty_play = ObjectSearchConfig(
-            ref="ankama.empty_play", cache_info=CacheInfo(max_placement=2)
+            ref="ankama.empty_play",
+            grey_scale=False,
+            cache_info=CacheInfo(max_placement=2),
+            threshold=0.95,
         )
 
     class Bank:
