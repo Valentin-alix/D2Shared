@@ -23,7 +23,6 @@ class BaseMapSchema(CoordinatesMapSchema):
     sub_area: "SubAreaSchema"
 
     allow_teleport_from: bool
-    allow_monster_fight: bool
     has_priority_on_world_map: bool
 
     def __hash__(self) -> int:
