@@ -1,10 +1,7 @@
 import random
 import string
-from time import sleep
 
 import numpy as np
-
-from src.consts import RANGE_WAIT
 
 RANGE_OFFSET: tuple[float, float] = (0.95, 1)
 
@@ -28,8 +25,3 @@ def multiply_offset(range: tuple[float, float] = RANGE_OFFSET):
 
 def get_random_id(size=6, chars=string.ascii_uppercase + string.digits):
     return "".join(random.choice(chars) for _ in range(size))
-
-
-def wait(range: tuple[float, float] = RANGE_WAIT):
-    time = pick_random_weighted_time(*range)
-    sleep(time)
