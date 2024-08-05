@@ -37,9 +37,9 @@ class ObjectConfigs:
     )
 
     class Ankama:
-        play = ObjectSearchConfig(ref="ankama.play", grey_scale=False, threshold=0.85)
+        play = ObjectSearchConfig(ref="ankama.play", grey_scale=False, threshold=0.95)
         empty_play = ObjectSearchConfig(
-            ref="ankama.empty_play", grey_scale=False, threshold=0.85
+            ref="ankama.empty_play", grey_scale=False, threshold=0.95
         )
 
     class Bank:
