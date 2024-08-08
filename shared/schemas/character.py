@@ -2,7 +2,7 @@ from typing import Annotated
 
 from pydantic import conint
 
-from D2Shared.shared.enums import ElemEnum
+from D2Shared.shared.enums import ElemEnum, SaleHotelQuantity
 from D2Shared.shared.schemas.base import BaseSchemaOrm
 from D2Shared.shared.schemas.item import ItemSchema
 from D2Shared.shared.schemas.job import JobSchema
@@ -10,6 +10,22 @@ from D2Shared.shared.schemas.recipe import RecipeSchema
 from D2Shared.shared.schemas.spell import SpellSchema
 from D2Shared.shared.schemas.sub_area import SubAreaSchema
 from D2Shared.shared.schemas.waypoint import WaypointSchema
+
+
+class BaseCharacterSellItemInfoSchema(BaseSchemaOrm):
+    character_id: str
+    item_id: int
+    sale_hotel_quantity: list[SaleHotelQuantity]
+
+    def __hash__(self) -> int:
+        return (self.character_id, self.item_id).__hash__()
+
+
+class UpdateCharacterSellItemInfoSchema(BaseCharacterSellItemInfoSchema): ...
+
+
+class ReadCharacterSellItemInfoSchema(BaseCharacterSellItemInfoSchema):
+    item: ItemSchema
 
 
 class CharacterJobInfoSchema(BaseSchemaOrm):
@@ -41,7 +57,7 @@ class CharacterSchema(BaseCharacterSchema):
     sub_areas: list[SubAreaSchema]
     spells: list[SpellSchema]
     recipes: list[RecipeSchema]
-    sell_items: list[ItemSchema]
+    character_sell_items_info: list[ReadCharacterSellItemInfoSchema]
     bank_items: list[ItemSchema]
 
     def __eq__(self, value: object) -> bool:
