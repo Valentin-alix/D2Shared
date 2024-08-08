@@ -42,6 +42,7 @@ class CharacterSchema(BaseCharacterSchema):
     spells: list[SpellSchema]
     recipes: list[RecipeSchema]
     sell_items: list[ItemSchema]
+    bank_items: list[ItemSchema]
 
     def __eq__(self, value: object) -> bool:
         return isinstance(value, CharacterSchema) and value.id == self.id
