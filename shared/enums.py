@@ -116,3 +116,9 @@ class TypeCellEnum(IntEnum):
     VOID = auto()
     OPAQUE = auto()
     OCCUPED = auto()
+
+
+class SaleHotelQuantity(IntEnum):
+    ONE = 1
+    TEN = 10
+    HUNDRED = 100

@@ -2,6 +2,12 @@ from D2Shared.shared.schemas.base import BaseSchemaOrm
 from D2Shared.shared.schemas.type_item import TypeItemSchema
 
 
+class ItemSaleInfoSchema(BaseSchemaOrm):
+    character_id: int
+    item_id: int
+    item: ItemSchema
+
+
 class ItemSchema(BaseSchemaOrm):
     id: int
     name: str
