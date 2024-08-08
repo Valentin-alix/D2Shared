@@ -4,6 +4,7 @@ from pydantic import conint
 
 from D2Shared.shared.enums import ElemEnum
 from D2Shared.shared.schemas.base import BaseSchemaOrm
+from D2Shared.shared.schemas.item import ItemSchema
 from D2Shared.shared.schemas.job import JobSchema
 from D2Shared.shared.schemas.recipe import RecipeSchema
 from D2Shared.shared.schemas.spell import SpellSchema
@@ -40,6 +41,7 @@ class CharacterSchema(BaseCharacterSchema):
     sub_areas: list[SubAreaSchema]
     spells: list[SpellSchema]
     recipes: list[RecipeSchema]
+    sell_items: list[ItemSchema]
 
     def __eq__(self, value: object) -> bool:
         return isinstance(value, CharacterSchema) and value.id == self.id
