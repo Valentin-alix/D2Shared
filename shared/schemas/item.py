@@ -20,6 +20,3 @@ class ItemSchema(BaseSchemaOrm):
 
     def __repr__(self) -> str:
         return self.__str__()
-
-
-ItemSchema.model_rebuild()
