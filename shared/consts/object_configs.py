@@ -23,6 +23,7 @@ from ..consts.adaptative.regions import (
     RIP_REGION,
     SALE_HOTEL_FILTER_CHECK_REGION,
     SALE_HOTEL_HUNDRED_QUANTITY_REGION,
+    SALE_HOTEL_ONE_QUANTITY_REGION,
     SALE_HOTEL_PLACE_SELL_REGION,
     SALE_HOTEL_TEN_QUANTITY_REGION,
 )
@@ -232,6 +233,11 @@ class ObjectConfigs:
         )
         sale_category = ObjectSearchConfig(
             threshold=0.95, ref="sale_hotel.sale_category"
+        )
+        one_quantity = ObjectSearchConfig(
+            threshold=0.95,
+            ref="sale_hotel.one_quantity",
+            lookup_region=SALE_HOTEL_ONE_QUANTITY_REGION,
         )
         ten_quantity = ObjectSearchConfig(
             threshold=0.95,
