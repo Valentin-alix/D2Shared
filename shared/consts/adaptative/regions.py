@@ -55,9 +55,9 @@ SALE_HOTEL_THIRD_PRICE_REGION = RegionSchema(left=515, top=605, right=580, bot=6
 SALE_HOTEL_THIRD_QUANTITY_REGION = RegionSchema(left=450, top=610, right=485, bot=635)
 
 SALE_HOTEL_PLACE_SELL_REGION = RegionSchema(left=380, top=390, right=590, bot=440)
-SALE_HOTEL_ONE_QUANTITY_REGION = RegionSchema(left=485, top=307, right=506, bot=335)
-SALE_HOTEL_TEN_QUANTITY_REGION = RegionSchema(left=485, top=340, right=506, bot=356)
-SALE_HOTEL_HUNDRED_QUANTITY_REGION = RegionSchema(left=485, top=365, right=515, bot=383)
+SALE_HOTEL_ONE_QUANTITY_REGION = RegionSchema(left=470, top=300, right=510, bot=340)
+SALE_HOTEL_TEN_QUANTITY_REGION = RegionSchema(left=470, top=340, right=510, bot=356)
+SALE_HOTEL_HUNDRED_QUANTITY_REGION = RegionSchema(left=470, top=365, right=515, bot=383)
 
 SALE_HOTEL_AVAILABLE_SLOT_REGION = RegionSchema(left=627, top=821, right=729, bot=843)
 
