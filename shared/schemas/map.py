@@ -19,11 +19,6 @@ class BaseMapSchema(CoordinatesMapSchema):
     y: int
     world_id: int = 1
 
-    left_map_id: int
-    right_map_id: int
-    top_map_id: int
-    bot_map_id: int
-
     sub_area_id: int
     sub_area: "SubAreaSchema"
 
