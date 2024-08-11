@@ -1,22 +1,16 @@
 from typing import Any
 
-from pydantic import BaseModel
 
 from D2Shared.shared.enums import ToDirection
-from D2Shared.shared.schemas.map import MapSchema
+from D2Shared.shared.schemas.base import BaseSchemaOrm
 from D2Shared.shared.schemas.waypoint import WaypointSchema
 from D2Shared.shared.schemas.zaapi import ZaapiSchema
 
 
-class MapDirectionSchema(BaseModel):
-    direction: ToDirection
-    map: MapSchema
+type ActionMapChangeSchema = ToDirection | ZaapiSchema | WaypointSchema
 
 
-type ActionMapChangeSchema = MapDirectionSchema | ZaapiSchema | WaypointSchema
-
-
-class MapWithActionSchema(BaseModel):
+class MapWithActionSchema(BaseSchemaOrm):
     map_id: int
     from_action: ActionMapChangeSchema | None = None
 
@@ -24,7 +18,7 @@ class MapWithActionSchema(BaseModel):
         return isinstance(value, MapWithActionSchema) and self.map_id == value.map_id
 
     def __str__(self) -> str:
-        return f"{self.from_action.__class__.__name__} -> {self.from_action}"
+        return str(self.from_action)
 
     def __repr__(self) -> str:
         return self.__str__()

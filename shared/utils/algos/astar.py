@@ -116,7 +116,6 @@ class Astar(ABC, Generic[T]):
         while open_set and iteration <= max_iteration:
             iteration += 1
             current_node = open_set.pop()
-
             if self.is_goal_reached(current_node.data, ends):
                 return self.reconstruct_path(current_node, do_reverse)
 
