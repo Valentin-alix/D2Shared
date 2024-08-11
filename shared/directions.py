@@ -1,32 +1,13 @@
-from D2Shared.shared.enums import FromDirection, ToDirection
+from D2Shared.shared.enums import Direction
 
 
-def get_inverted_direction(direction: ToDirection) -> FromDirection:
+def get_inverted_direction(direction: Direction) -> Direction:
     match direction:
-        case ToDirection.LEFT_TOP:
-            return FromDirection.RIGHT_TOP
-        case ToDirection.LEFT:
-            return FromDirection.RIGHT
-        case ToDirection.LEFT_BOT:
-            return FromDirection.RIGHT_BOT
-
-        case ToDirection.RIGHT_TOP:
-            return FromDirection.LEFT_TOP
-        case ToDirection.RIGHT:
-            return FromDirection.LEFT
-        case ToDirection.RIGHT_BOT:
-            return FromDirection.LEFT_BOT
-
-        case ToDirection.TOP_LEFT:
-            return FromDirection.BOT_LEFT
-        case ToDirection.TOP:
-            return FromDirection.BOT
-        case ToDirection.TOP_RIGHT:
-            return FromDirection.BOT_RIGHT
-
-        case ToDirection.BOT_LEFT:
-            return FromDirection.TOP_LEFT
-        case ToDirection.BOT:
-            return FromDirection.TOP
-        case ToDirection.BOT_RIGHT:
-            return FromDirection.TOP_RIGHT
+        case Direction.LEFT:
+            return Direction.RIGHT
+        case Direction.RIGHT:
+            return Direction.LEFT
+        case Direction.TOP:
+            return Direction.BOT
+        case Direction.BOT:
+            return Direction.TOP

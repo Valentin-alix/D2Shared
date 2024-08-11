@@ -60,7 +60,7 @@ class JobEnum(StrEnum):
     SHAPER_MAGE = "Façomage"
 
 
-class ToDirection(IntEnum):
+class Direction(IntEnum):
     TOP = auto()
     BOT = auto()
     RIGHT = auto()
