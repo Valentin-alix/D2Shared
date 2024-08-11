@@ -1,13 +1,13 @@
 from typing import Any
 
 
-from D2Shared.shared.enums import ToDirection
 from D2Shared.shared.schemas.base import BaseSchemaOrm
+from D2Shared.shared.schemas.map_direction import MapDirectionSchema
 from D2Shared.shared.schemas.waypoint import WaypointSchema
 from D2Shared.shared.schemas.zaapi import ZaapiSchema
 
 
-type ActionMapChangeSchema = ToDirection | ZaapiSchema | WaypointSchema
+type ActionMapChangeSchema = MapDirectionSchema | ZaapiSchema | WaypointSchema
 
 
 class MapWithActionSchema(BaseSchemaOrm):
