@@ -61,36 +61,10 @@ class JobEnum(StrEnum):
 
 
 class ToDirection(IntEnum):
-    TOP_LEFT = auto()
     TOP = auto()
-    TOP_RIGHT = auto()
-    BOT_LEFT = auto()
     BOT = auto()
-    BOT_RIGHT = auto()
-    RIGHT_TOP = auto()
     RIGHT = auto()
-    RIGHT_BOT = auto()
-    LEFT_TOP = auto()
     LEFT = auto()
-    LEFT_BOT = auto()
-
-
-class FromDirection(IntEnum):
-    TOP_LEFT = auto()
-    TOP = auto()
-    TOP_RIGHT = auto()
-    BOT_LEFT = auto()
-    BOT = auto()
-    BOT_RIGHT = auto()
-    RIGHT_TOP = auto()
-    RIGHT = auto()
-    RIGHT_BOT = auto()
-    LEFT_TOP = auto()
-    LEFT = auto()
-    LEFT_BOT = auto()
-    WAYPOINT = auto()
-    ZAAPI = auto()
-    UNKNOWN = auto()
 
 
 class CategoryEnum(IntEnum):

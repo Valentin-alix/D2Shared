@@ -99,6 +99,7 @@ class Astar(ABC, Generic[T]):
         ends: set[T],
         do_reverse: bool = False,
         random_coeff: tuple[float, float] = (0.95, 1),
+        max_iteration: int = 9999,
     ) -> list[T] | None:
         open_set: OpenSet[Node[T]] = OpenSet()
 
@@ -111,7 +112,9 @@ class Astar(ABC, Generic[T]):
         search_node_dict[start] = start_node
         open_set.push(start_node)
 
-        while open_set:
+        iteration = 0
+        while open_set and iteration <= max_iteration:
+            iteration += 1
             current_node = open_set.pop()
 
             if self.is_goal_reached(current_node.data, ends):
