@@ -4,23 +4,13 @@ from pydantic import conint
 
 from D2Shared.shared.enums import ElemEnum
 from D2Shared.shared.schemas.base import BaseSchemaOrm
+from D2Shared.shared.schemas.character_job_info import CharacterJobInfoSchema
+from D2Shared.shared.schemas.character_path_info import ReadCharacterPathInfoSchema
 from D2Shared.shared.schemas.item import ItemSchema, SellItemInfo
-from D2Shared.shared.schemas.job import JobSchema
 from D2Shared.shared.schemas.recipe import RecipeSchema
 from D2Shared.shared.schemas.spell import SpellSchema
 from D2Shared.shared.schemas.sub_area import SubAreaSchema
 from D2Shared.shared.schemas.waypoint import WaypointSchema
-
-
-class CharacterJobInfoSchema(BaseSchemaOrm):
-    character_id: str
-    job_id: int
-    job: JobSchema
-    lvl: Annotated[int, conint(ge=1, le=200)]
-    weight: float
-
-    def __hash__(self) -> int:
-        return (self.character_id, self.job_id).__hash__()
 
 
 class BaseCharacterSchema(BaseSchemaOrm):
@@ -43,6 +33,7 @@ class CharacterSchema(BaseCharacterSchema):
     recipes: list[RecipeSchema]
     sell_items_infos: list[SellItemInfo]
     bank_items: list[ItemSchema]
+    paths_infos: list[ReadCharacterPathInfoSchema]
 
     def __eq__(self, value: object) -> bool:
         return isinstance(value, CharacterSchema) and value.id == self.id
