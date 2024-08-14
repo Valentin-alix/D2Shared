@@ -13,7 +13,6 @@ class BaseConfigUserSchema(BaseSchemaOrm):
     time_between_sentence: time
     time_fighter: time
     time_harvester: time
-    randomizer_duration_activity: float
 
 
 class ReadConfigUserSchema(BaseConfigUserSchema):
