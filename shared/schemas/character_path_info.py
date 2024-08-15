@@ -7,7 +7,7 @@ class BaseCharacterPathInfoSchema(BaseSchemaOrm):
 
 
 class ReadCharacterPathInfoSchema(BaseCharacterPathInfoSchema):
-    id: str
+    id: int
     character_id: str
     path_maps: list[ReadCharacterPathMapSchema]
 

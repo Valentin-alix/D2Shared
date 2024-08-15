@@ -8,6 +8,7 @@ class BaseCharacterPathMapSchema(BaseSchemaOrm):
 
 
 class ReadCharacterPathMapSchema(BaseCharacterPathMapSchema):
+    id: int
     map_id: int
     map: MapSchema
 
