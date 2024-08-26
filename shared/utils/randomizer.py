@@ -6,13 +6,13 @@ import numpy as np
 RANGE_OFFSET: tuple[float, float] = (0.95, 1)
 
 
-def pick_random_weighted_time(mini: float, maxi: float) -> float:
+def pick_random_weighted_time(mini: float, maxi: float, coeff: float = 2) -> float:
     if mini == 0:
         return 0
 
     def pick_decreasing_random_in_range(mini: float, maxi: float) -> list[float]:
         steps: list[float] = [round(time, 3) for time in np.arange(mini, maxi, 0.05)]
-        numbers = random.choices(steps, [1 / (step**2) for step in steps], k=1)
+        numbers = random.choices(steps, [1 / (step**coeff) for step in steps], k=1)
         return numbers
 
     wait_time = pick_decreasing_random_in_range(mini, maxi)[0]
