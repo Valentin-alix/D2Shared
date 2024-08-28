@@ -3,6 +3,8 @@ from ...consts.adaptative.consts import (
     LINE_COUNT,
     LINE_END_X,
     LINE_HEIGHT,
+    LINE_MAX_END_X,
+    LINE_MAX_START_X,
     LINE_START_X,
     LINES_START_Y,
 )
@@ -80,6 +82,15 @@ LINE_AREAS = [
         left=LINE_START_X,
         top=int((LINE_HEIGHT * line) + LINES_START_Y),
         right=LINE_END_X,
+        bot=int((LINE_HEIGHT * (line + 1)) + LINES_START_Y),
+    )
+    for line in range(LINE_COUNT)
+]
+LINE_MAX_AREAS = [
+    RegionSchema(
+        left=LINE_MAX_START_X,
+        top=int((LINE_HEIGHT * line) + LINES_START_Y),
+        right=LINE_MAX_END_X,
         bot=int((LINE_HEIGHT * (line + 1)) + LINES_START_Y),
     )
     for line in range(LINE_COUNT)
