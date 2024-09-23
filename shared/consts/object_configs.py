@@ -2,78 +2,44 @@ from cachetools import cached
 from cachetools.keys import hashkey
 
 from ..consts.adaptative.regions import (
-    CENTER_LARGE_V_REGION,
-    CHAT_REGION,
     CONTENT_REGION,
     CONTENT_REGION_COLLECTABLE,
-    CREATURE_MODE_REGION,
-    CROSS_CONNECTIO_WARNING,
-    CROSS_INFO_LOSE_FIGHT,
-    CROSS_INFO_WIN_FIGHT,
     CROSS_MAP,
-    CROSS_POPUP_INFO,
-    CROSS_SALE_HOTEL_INVENTORY_RIGHT,
-    END_FIGHT_MODAL_REGION,
-    END_TURN_REGION,
-    HELP_LOCK_FIGHT_PREP_REGION,
-    ICON_CHARACTERISTIC_REGION,
-    IN_FIGHT_REGION,
     INFO_MODAL_REGION,
-    INVENTORY_RIGHT_CROSS_REGION,
-    RIP_REGION,
     SALE_HOTEL_FILTER_CHECK_REGION,
     SALE_HOTEL_HUNDRED_QUANTITY_REGION,
     SALE_HOTEL_ONE_QUANTITY_REGION,
-    SALE_HOTEL_PLACE_SELL_REGION,
     SALE_HOTEL_TEN_QUANTITY_REGION,
 )
 from ..entities.object_search_config import CacheInfo, ObjectSearchConfig
 
 
 class ObjectConfigs:
-    in_game = ObjectSearchConfig(
-        ref="in_game",
-        lookup_region=ICON_CHARACTERISTIC_REGION,
-        cache_info=CacheInfo(max_placement=2),
-    )
+    in_game = ObjectSearchConfig(ref="in_game", cache_info=None)
 
     class Ankama:
-        play = ObjectSearchConfig(ref="ankama.play", grey_scale=False, threshold=0.95)
+        play = ObjectSearchConfig(
+            ref="ankama.play", grey_scale=False, threshold=0.95, cache_info=None
+        )
         empty_play = ObjectSearchConfig(
-            ref="ankama.empty_play", grey_scale=False, threshold=0.95
+            ref="ankama.empty_play", grey_scale=False, threshold=0.95, cache_info=None
         )
 
     class Bank:
-        owl_astrub = ObjectSearchConfig(
-            lookup_region=CONTENT_REGION, ref="bank.owl_astrub"
-        )
-        owl_bonta = ObjectSearchConfig(
-            lookup_region=CONTENT_REGION, ref="bank.owl_bonta"
-        )
-        consult_chest_text = ObjectSearchConfig(
-            lookup_region=CONTENT_REGION, ref="bank.consult_chest_text"
-        )
+        owl_astrub = ObjectSearchConfig(ref="bank.owl_astrub")
+        owl_bonta = ObjectSearchConfig(ref="bank.owl_bonta")
+        consult_chest_text = ObjectSearchConfig(ref="bank.consult_chest_text")
         transfer_icon_in = ObjectSearchConfig(
             threshold=0.95, ref="bank.transfer_icon_in"
         )
-        transfer_icon_out = ObjectSearchConfig(
-            lookup_region=CONTENT_REGION, ref="bank.transfer_icon_out"
-        )
+        transfer_icon_out = ObjectSearchConfig(ref="bank.transfer_icon_out")
         transfer_all_text = ObjectSearchConfig(
-            ref="bank.transfer_all_text",
-            cache_info=CacheInfo(max_placement=None),
+            ref="bank.transfer_all_text", cache_info=None
         )
 
     class Button:
-        ok = ObjectSearchConfig(
-            grey_scale=False, ref="button.ok", lookup_region=CENTER_LARGE_V_REGION
-        )
-        yes = ObjectSearchConfig(
-            grey_scale=False,
-            ref="button.yes",
-            lookup_region=CENTER_LARGE_V_REGION,
-            cache_info=CacheInfo(max_placement=2),
-        )
+        ok = ObjectSearchConfig(grey_scale=False, ref="button.ok", cache_info=None)
+        yes = ObjectSearchConfig(grey_scale=False, ref="button.yes", cache_info=None)
 
     class Check:
         small = ObjectSearchConfig(
@@ -90,66 +56,23 @@ class ObjectConfigs:
         )
 
     class Connection:
-        launcher = ObjectSearchConfig(
-            ref="connection.launcher", cache_info=CacheInfo(max_placement=2)
-        )  # button can be shift
+        launcher = ObjectSearchConfig(ref="connection.launcher", cache_info=None)
         play = ObjectSearchConfig(ref="connection.play")
 
     class Cross:
-        green = ObjectSearchConfig(
-            ref="cross.green",
-            lookup_region=INFO_MODAL_REGION,
-            cache_info=CacheInfo(max_placement=2),
+        green_info_modal = ObjectSearchConfig(
+            ref="cross.green", lookup_region=INFO_MODAL_REGION, cache_info=None
         )
-        inverted = ObjectSearchConfig(
-            ref="cross.inverted", lookup_region=CENTER_LARGE_V_REGION
-        )
+        grey_on_black = ObjectSearchConfig(ref="cross.grey_on_black", cache_info=None)
+        black_on_grey = ObjectSearchConfig(ref="cross.black_on_grey", cache_info=None)
         map = ObjectSearchConfig(ref="cross.map", lookup_region=CROSS_MAP)
-        bank_inventory_right = ObjectSearchConfig(
-            name="cross.bank_inventory_right",
-            ref="cross.medium",
-            lookup_region=INVENTORY_RIGHT_CROSS_REGION,
-        )
-        sale_hotel_inventory_right = ObjectSearchConfig(
-            name="cross.sale_hotel_inventory_right",
-            ref="cross.medium",
-            lookup_region=CROSS_SALE_HOTEL_INVENTORY_RIGHT,
-        )
-        connection_warning = ObjectSearchConfig(
-            name="cross.connection_warning",
-            ref="cross.medium",
-            lookup_region=CROSS_CONNECTIO_WARNING,
-        )
-        popup_info = ObjectSearchConfig(
-            name="cross.popup_info",
-            ref="cross.medium",
-            lookup_region=CROSS_POPUP_INFO,
-            cache_info=CacheInfo(max_placement=5),
-        )
-        info_win_fight = ObjectSearchConfig(
-            name="cross.info_win_fight",
-            ref="cross.small",
-            lookup_region=CROSS_INFO_WIN_FIGHT,
-            cache_info=CacheInfo(max_placement=2),
-        )
-        info_lose_fight = ObjectSearchConfig(
-            name="cross.info_lose_fight",
-            ref="cross.small",
-            lookup_region=CROSS_INFO_LOSE_FIGHT,
-            cache_info=CacheInfo(max_placement=2),
+        small_black_on_grey = ObjectSearchConfig(
+            ref="cross.small_black_on_grey", cache_info=None
         )
 
     class Text:
-        impossible_transfer = ObjectSearchConfig(
-            grey_scale=False,
-            threshold=0.95,
-            ref="text.impossible_transfer",
-            lookup_region=CHAT_REGION,
-        )
-        no_receipe = ObjectSearchConfig(
-            ref="text.no_receipe", lookup_region=CONTENT_REGION
-        )
-        receipe = ObjectSearchConfig(ref="text.receipe", lookup_region=CONTENT_REGION)
+        no_receipe = ObjectSearchConfig(ref="text.no_receipe")
+        receipe = ObjectSearchConfig(ref="text.receipe")
         level_up = ObjectSearchConfig(
             grey_scale=False,
             ref="text.level_up",
@@ -158,27 +81,19 @@ class ObjectConfigs:
         )
 
     class Fight:
-        ready = ObjectSearchConfig(lookup_region=END_TURN_REGION, ref="fight.ready")
+        ready = ObjectSearchConfig(ref="fight.ready", cache_info=None)
         choose_chall = ObjectSearchConfig(
-            lookup_region=END_TURN_REGION, ref="fight.prep.choose_chall"
+            ref="fight.prep.choose_chall", cache_info=None
         )
-        in_prep = ObjectSearchConfig(
-            lookup_region=HELP_LOCK_FIGHT_PREP_REGION, ref="fight.prep.in_prep"
-        )
+        in_prep = ObjectSearchConfig(ref="fight.prep.in_prep", cache_info=None)
         lock = ObjectSearchConfig(
-            lookup_region=HELP_LOCK_FIGHT_PREP_REGION,
-            ref="fight.prep.lock",
-            grey_scale=False,
-            threshold=0.95,
+            ref="fight.prep.lock", grey_scale=False, threshold=0.95, cache_info=None
         )
         end_turn = ObjectSearchConfig(
-            lookup_region=END_TURN_REGION, threshold=0.95, ref="fight.end_turn"
+            threshold=0.95, ref="fight.end_turn", cache_info=None
         )
         mode_crea = ObjectSearchConfig(
-            lookup_region=CREATURE_MODE_REGION,
-            ref="fight.mode_crea",
-            grey_scale=False,
-            threshold=0.95,
+            ref="fight.mode_crea", grey_scale=False, threshold=0.95, cache_info=None
         )
         enemy = ObjectSearchConfig(
             lookup_region=CONTENT_REGION,
@@ -188,29 +103,24 @@ class ObjectConfigs:
             cache_info=None,
         )
         in_fight = ObjectSearchConfig(
-            ref="fight.in_fight",
-            threshold=0.9,
-            lookup_region=IN_FIGHT_REGION,
-            cache_info=None,
+            ref="fight.in_fight", threshold=0.9, cache_info=None
         )
-        grave = ObjectSearchConfig(lookup_region=RIP_REGION, ref="fight.post.grave")
+        grave = ObjectSearchConfig(ref="fight.post.grave")
         phenix = ObjectSearchConfig(
             lookup_region=CONTENT_REGION,
             ref="fight.post.phenix",
             cache_info=CacheInfo(min_parsed_count_on_map=1),
         )
-        defeat_text = ObjectSearchConfig(
-            lookup_region=END_FIGHT_MODAL_REGION, ref="fight.post.defeat_text"
-        )
+        defeat_text = ObjectSearchConfig(ref="fight.post.defeat_text")
         ressuscite_text = ObjectSearchConfig(
-            lookup_region=CHAT_REGION, ref="fight.post.ressuscite_text", cache_info=None
+            ref="fight.post.ressuscite_text", cache_info=None
         )
 
     class Harvest:
         impossible_recolt_text = ObjectSearchConfig(
             lookup_region=INFO_MODAL_REGION,
             ref="harvest.impossible_recolt_text",
-            cache_info=CacheInfo(max_placement=2),
+            cache_info=None,
         )
 
     class Job:
@@ -218,18 +128,12 @@ class ObjectConfigs:
             threshold=0.9,
             ref="job.level_up",
             lookup_region=INFO_MODAL_REGION,
-            cache_info=CacheInfo(max_placement=2),
+            cache_info=None,
         )
 
     class SaleHotel:
-        on_place_in_sale = ObjectSearchConfig(
-            lookup_region=SALE_HOTEL_PLACE_SELL_REGION,
-            ref="sale_hotel.on_place_in_sale",
-            threshold=0.95,
-            grey_scale=False,
-        )
-        cant_place_text = ObjectSearchConfig(
-            grey_scale=False, ref="sale_hotel.cant_place_text"
+        put_in_sale_btn = ObjectSearchConfig(
+            ref="sale_hotel.on_place_in_sale", threshold=0.95, grey_scale=False
         )
         sale_category = ObjectSearchConfig(
             threshold=0.95, ref="sale_hotel.sale_category"
@@ -252,14 +156,13 @@ class ObjectConfigs:
 
     class PathFinding:
         zaapi = ObjectSearchConfig(
-            ref="path_finding.zaapi",
-            cache_info=CacheInfo(min_parsed_count_on_map=1, max_placement=None),
+            ref="path_finding.zaapi", cache_info=CacheInfo(min_parsed_count_on_map=1)
         )
         lotery_havre_sac = ObjectSearchConfig(
-            ref="path_finding.lotery_havre_sac", lookup_region=CONTENT_REGION
+            ref="path_finding.lotery_havre_sac", cache_info=None
         )
         teleport_zaap = ObjectSearchConfig(
-            ref="path_finding.teleport_zaap", lookup_region=CONTENT_REGION
+            ref="path_finding.teleport_zaap", cache_info=None
         )
 
     class WorkShop:
