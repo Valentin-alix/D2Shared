@@ -22,7 +22,7 @@ class ObjectConfigs:
             ref="ankama.play", grey_scale=False, threshold=0.95, cache_info=None
         )
         empty_play = ObjectSearchConfig(
-            ref="ankama.empty_play", grey_scale=False, threshold=0.95, cache_info=None
+            ref="ankama.empty_play", grey_scale=False, threshold=0.99, cache_info=None
         )
 
     class Bank:
@@ -105,7 +105,7 @@ class ObjectConfigs:
         in_fight = ObjectSearchConfig(
             ref="fight.in_fight", threshold=0.9, cache_info=None
         )
-        grave = ObjectSearchConfig(ref="fight.post.grave")
+        grave = ObjectSearchConfig(ref="fight.post.grave", cache_info=None)
         phenix = ObjectSearchConfig(
             lookup_region=CONTENT_REGION,
             ref="fight.post.phenix",
